@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { selectDarkMode, toggleDarkMode } from "../Features/ToggleModeSlice";
 import Styles from "./Navbar.module.css";
 import Sun from "../assets/images/sun.png";
 import Moon from "../assets/images/moon.png";
@@ -7,14 +9,15 @@ import Bars from "../assets/images/bars.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const darkMode = useSelector(selectDarkMode);
+  const dispatch = useDispatch();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
+    dispatch(toggleDarkMode());
   };
 
   return (

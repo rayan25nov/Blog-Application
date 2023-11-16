@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root CSS variables */
+
+:root {
+  /* Dark theme variables */
+  --dark-background-color: #080c1c;
+  --dark-text-color: #ffffff;
+  --dark-accent-color: #ff6f00;
+  --dark-border-color: #424242;
+  --dark-img-filter: invert(0);
+
+  /* Light theme variables */
+  --light-background-color: #f0f0f0;
+  --light-text-color: #333333;
+  --light-accent-color: #00b0ff;
+  --light-border-color: #cccccc;
+  --light-img-filter: invert(100);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+/* Dark theme variables */
+
+.dark {
+  background-color: var(--dark-background-color);
+}
+
+/* Light theme variables */
+
+.light {
+  background-color: var(--light-background-color);
+}
