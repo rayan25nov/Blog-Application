@@ -1,0 +1,58 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+  margin: 0.625rem;
+  height: 0.0625rem;
+  border: none;
+  background-color: #3bb19b;
+}
+.heading {
+  color: #1a1a1a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  margin: 1rem 0; /* 16px 0 */
+}
+
+.para {
+  font-size: 1.25rem; /* 20px */
+  text-align: center;
+  margin: 0.5rem 0; /* 8px 0 */
+}
+
+/* Media query for medium screens */
+
+@media screen and (max-width: 37.5rem) {
+  /* 600px */
+  .heading {
+    font-size: 2rem; /* 32px */
+    margin: 0.75rem 0; /* 12px 0 */
+  }
+
+  .para {
+    font-size: 1rem; /* 16px */
+    margin: 0.25rem 0; /* 4px 0 */
+  }
+}
+
+/* Media query for small screens */
+
+@media screen and (max-width: 28.125rem) {
+  /* 450px */
+  .heading {
+    font-size: 1.5rem; /* 24px */
+    margin: 0.5rem 0; /* 8px 0 */
+  }
+
+  .para {
+    font-size: 0.875rem; /* 14px */
+    margin: 0.125rem 0; /* 2px 0 */
+  }
+}

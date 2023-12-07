@@ -61,10 +61,30 @@
 }
 
 .navbar_links a:hover {
-  border-bottom-color: var(
-    --accent-color
-  ); /* change the border color to the accent color */
+  border-bottom-color: var(--accent-color);
 }
+.navbar_links a.active {
+  border-bottom-color: var(--accent-color);
+}
+
+.logoutBtn {
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  background-color: #3bb19b;
+  /* background-color: var(--container-background); */
+  font-weight: 500;
+  border-radius: 0.625rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem; /* 8px 16px */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* .logoutBtn:hover {
+  color: #3bb19b;
+} */
 
 .theme_switcher {
   display: flex;
@@ -126,7 +146,7 @@
   }
   .navbar_links {
     position: absolute;
-    top: 30%;
+    top: 15%;
     left: 0;
     width: 100%;
     height: 100%;
