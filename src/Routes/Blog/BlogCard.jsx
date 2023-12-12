@@ -29,8 +29,7 @@ const BlogCard = () => {
             Wireframe is a design tool for creating wireframes for websites,
             apps, and other digital products. It is a popular tool for creating
             mockups and prototypes for websites, apps, and other digital
-            products. Wireframe is a design tool for creating wireframes for
-            websites, apps, and other digital products.
+            products.
           </p>
         </Link>
       </div>
@@ -45,9 +44,7 @@ const BlogCard = () => {
             They allow people to share information, ideas, opinions, and
             feedback in a timely and effective manner. They foster
             collaboration, teamwork, and creativity among participants, and help
-            them solve problems and make decisions together. They enhance
-            communication, trust, and rapport among people, and help them build
-            relationships and networks.
+            them solve problems and make decisions together.
           </p>
         </Link>
       </div>

@@ -36,7 +36,7 @@ const Navbar = () => {
       }`}
     >
       <div className={Styles.heading}>
-        <h1>Rayan Ahmad</h1>
+        <h1>Blog App</h1>
       </div>
       <div className={`${Styles.navbar_links} ${menuOpen ? Styles.open : ""}`}>
         <Link

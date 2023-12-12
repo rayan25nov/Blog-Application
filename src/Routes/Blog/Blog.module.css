@@ -1,9 +1,10 @@
+/* Import the font you want to use for the link */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 .container {
   width: 80%;
   margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
 hr {
   margin: 0.625rem;
   height: 0.0625rem;
@@ -21,16 +22,40 @@ hr {
   margin: 1rem 0; /* 16px 0 */
 }
 
+/* Define the styles for the link container */
+.link_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Define the styles for the link */
+.link {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #10b981;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Add some hover effects for the link */
+.link:hover {
+  color: #10b981;
+  background-color: white;
+  box-shadow: 0 0 10px #10b981;
+}
+
 .para {
   font-size: 1.25rem; /* 20px */
   text-align: center;
   margin: 0.5rem 0; /* 8px 0 */
 }
 
-/* Media query for medium screens */
-
 @media screen and (max-width: 37.5rem) {
-  /* 600px */
   .heading {
     font-size: 2rem; /* 32px */
     margin: 0.75rem 0; /* 12px 0 */

@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.container {
+  background-color: #090d1f;
+}
+.blog_container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+hr {
+  margin: 0.625rem;
+  height: 0.0625rem;
+  border: none;
+  background-color: #3bb19b;
+}
+.heading {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  margin: 1rem 0; /* 16px 0 */
+}
+
+.image {
+  background-image: url("../../assets/images/profile.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 380px;
+  width: 100%;
+  align-self: stretch;
+}
+
+.caption {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.para {
+  color: #c0c5d0;
+  font-size: 1rem;
+  line-height: 0.5rem;
+  text-align: justify;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.list {
+  padding-left: 1.5rem;
+}
+
+.list li {
+  line-height: 1.25rem;
+  color: #c0c5d0;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+/* This is the module.css file */
+
+.link_section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.link_icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 0.5rem gray;
+}
+
+.link_icon:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1080px) {
+  .image {
+    background-image: url("../../assets/images/profile_2.jpg");
+  }
+  .heading {
+    font-size: 4rem; /* 32px */
+    margin: 0.75rem 0; /* 12px 0 */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .image {
+    background-image: url("../../assets/images/profile_3.jpg");
+  }
+  .heading {
+    font-size: 3rem; /* 32px */
+    margin: 0.75rem 0; /* 12px 0 */
+  }
+
+  .para {
+    font-size: 1rem; /* 16px */
+    margin: 0.25rem 0; /* 4px 0 */
+  }
+  .caption {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+/* Media query for small screens */
+
+@media screen and (max-width: 450px) {
+  /* 450px */
+  .heading {
+    font-size: 2rem; /* 24px */
+    margin: 0.5rem 0; /* 8px 0 */
+  }
+
+  .para {
+    font-size: 0.875rem; /* 14px */
+    margin: 0.125rem 0; /* 2px 0 */
+  }
+  .caption {
+    font-size: 0.875rem;
+    margin: 0.125rem 0; /* 2px 0 */
+    font-weight: 300;
+  }
+}

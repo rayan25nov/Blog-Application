@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+  height: 100%;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardimg {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 5px;
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.link {
+  font-size: 18px;
+  font-weight: normal;
+  color: #fff;
+  background-color: #0070f3;
+  padding: 10px 15px;
+  margin: 0.625rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  min-width: 100px;
+}
+
+.link:hover {
+  background-color: #0062cc;
+}

@@ -10,6 +10,7 @@ import {
 import Styles from "./App.module.css";
 import Navbar from "./Navbar/Navbar.jsx";
 import Blog from "./Routes/Blog/Blog.jsx";
+import CreatePost from "./Routes/CreatePost/CreatePost.jsx";
 import Project from "./Routes/Projects/Project.jsx";
 import About from "./Routes/About/About.jsx";
 import NewsLetter from "./Routes/NewsLetter/NewsLetter.jsx";
@@ -17,14 +18,17 @@ import Login from "./Auth/login/Login.jsx";
 import Signup from "./Auth/signup/Signup.jsx";
 import EmailVerify from "./Auth/emailverify/EmailVerify.jsx";
 
-
 const App = () => {
   const darkMode = useSelector(selectDarkMode);
   const user = localStorage.getItem("token");
 
   return (
     <Router>
-      <div className={`${Styles.container} ${darkMode ? Styles.dark : Styles.light}`}>
+      <div
+        className={`${Styles.container} ${
+          darkMode ? Styles.dark : Styles.light
+        }`}
+      >
         {user && <Navbar />}
         <Routes>
           {user ? (
@@ -33,13 +37,17 @@ const App = () => {
               <Route path="/projects" element={<Project />} />
               <Route path="/about" element={<About />} />
               <Route path="/newsletter" element={<NewsLetter />} />
+              <Route path="/create-post" element={<CreatePost />} />
             </>
           ) : (
             <>
               <Route path="/signup" exact element={<Signup />} />
               <Route path="/login" exact element={<Login />} />
               <Route path="/" element={<Navigate replace to="/login" />} />
-              <Route path="/users/:id/verify/:token" element={<EmailVerify />} />
+              <Route
+                path="/users/:id/verify/:token"
+                element={<EmailVerify />}
+              />
             </>
           )}
         </Routes>
@@ -49,4 +57,3 @@ const App = () => {
 };
 
 export default App;
-
