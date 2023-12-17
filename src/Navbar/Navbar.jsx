@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectDarkMode, toggleDarkMode } from "../Features/ToggleModeSlice";
-import Styles from "./Navbar.module.css";
 import Sun from "../assets/images/sun.png";
 import Moon from "../assets/images/moon.png";
 import Cross from "../assets/images/cross.png";
 import Bars from "../assets/images/bars.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,10 +24,17 @@ const Navbar = () => {
   };
   const location = useLocation();
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/");
-    window.location.reload();
+  const handleLogout = async () => {
+    try {
+      const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+      const url = `${apiUrl}/users/logout`;
+      await axios.post(url);
+      localStorage.removeItem("token");
+      navigate("/");
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -73,7 +81,7 @@ const Navbar = () => {
         </button>
       </div>
       <div className={Styles.theme_switcher}>
-        <button onClick={toggleTheme}>
+        <button onClick={toggleTheme} className={Styles.theme_switcher_button}>
           {darkMode ? (
             <div className={Styles.theme}>
               <p>Light Mode</p>

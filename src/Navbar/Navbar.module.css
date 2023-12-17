@@ -92,7 +92,7 @@
   margin-right: 0.75rem;
 }
 
-.theme_switcher button {
+.theme_switcher_button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -106,7 +106,7 @@
   transition: transform 0.3s ease;
 }
 
-.theme_switcher button:hover {
+.theme_switcher_button:hover {
   transform: scale(1.1);
 }
 

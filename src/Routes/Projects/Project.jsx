@@ -1,11 +1,16 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import { useSelector } from "react-redux";
+import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import styles from "./Project.module.css";
 import projects from "./ProjectData.json";
 
 const Project = () => {
+  const darkMode = useSelector(selectDarkMode);
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
+    >
       <hr />
       <h1 className={styles.heading}>PROJECTS</h1>
       <hr />

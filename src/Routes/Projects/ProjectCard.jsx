@@ -1,10 +1,14 @@
 import React from "react";
 import styles from "./ProjectCard.module.css";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectDarkMode } from "../../Features/ToggleModeSlice";
 
 const ProjectCard = (props) => {
+  const darkMode = useSelector(selectDarkMode);
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
+    >
       <img className={styles.cardimg} src={props.cardimg} alt="project image" />
       <h2 className={styles.title}>{props.title}</h2>
       <p className={styles.description}>{props.description}</p>

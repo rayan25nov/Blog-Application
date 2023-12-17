@@ -1,0 +1,89 @@
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: flex-start;
+  min-height: 80vh;
+}
+.subscribeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 500px;
+  min-height: 200px;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputContainer input {
+  width: 70%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.button {
+  width: 20%;
+  height: 40px;
+  margin-left: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #444;
+}
+
+@media screen and (max-width: 760px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .subscribeContainer {
+    min-width: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  .subscribeContainer {
+    min-width: 300px;
+  }
+  .inputContainer input {
+    width: 60%;
+  }
+  .button {
+    width: 30%;
+  }
+}

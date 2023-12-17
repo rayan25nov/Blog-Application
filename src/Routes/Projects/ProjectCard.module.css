@@ -1,3 +1,14 @@
+/* Dark theme variables */
+.dark {
+  --text-color: #ffffff;
+  --border-color: #424242;
+}
+
+/* Light theme variables */
+.light {
+  --text-color: #333333;
+  --border-color: #cccccc;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -5,9 +16,8 @@
   max-width: 480px;
   height: 100%;
   margin: 20px;
-  border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--border-color);
 }
 
 .cardimg {
@@ -20,13 +30,13 @@
 .title {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: var(--text-color);
   margin: 10px 0;
 }
 
 .description {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-color);
   margin: 10px 5px;
   text-align: center;
 }

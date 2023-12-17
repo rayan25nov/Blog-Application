@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { selectDarkMode } from "./Features/ToggleModeSlice";
 import {
   BrowserRouter as Router,
@@ -7,20 +7,41 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Styles from "./App.module.css";
+import axios from "axios";
 import Navbar from "./Navbar/Navbar.jsx";
 import Blog from "./Routes/Blog/Blog.jsx";
-import CreatePost from "./Routes/CreatePost/CreatePost.jsx";
+import CreateBlog from "./Routes/CreateBlog/CreateBlog.jsx";
 import Project from "./Routes/Projects/Project.jsx";
 import About from "./Routes/About/About.jsx";
-import NewsLetter from "./Routes/NewsLetter/NewsLetter.jsx";
 import Login from "./Auth/login/Login.jsx";
 import Signup from "./Auth/signup/Signup.jsx";
 import EmailVerify from "./Auth/emailverify/EmailVerify.jsx";
+import Profile from "./Routes/Profile/Profile.jsx";
+import SpecificBlog from "./Routes/SpecificBlog/SpecificBlog.jsx";
+import UpdateBlog from "./Routes/UpdateBlog/UpdateBlog.jsx";
+import NewsLetter from "./Routes/NewsLetter/NewsLetter.jsx";
+import Styles from "./App.module.css";
 
 const App = () => {
   const darkMode = useSelector(selectDarkMode);
-  const user = localStorage.getItem("token");
+  const JWT_TOKEN = localStorage.getItem("token");
+  const [user, setUser] = useState({});
+  const fetchData = async () => {
+    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+    const url = `${apiUrl}/users/profile`;
+    // Make the GET request to the API
+    const { data: res } = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${JWT_TOKEN}`,
+      },
+    });
+    setUser(res.user);
+    // console.log(res.user.image);
+  };
+  JWT_TOKEN &&
+    useEffect(() => {
+      fetchData();
+    }, []);
 
   return (
     <Router>
@@ -29,15 +50,18 @@ const App = () => {
           darkMode ? Styles.dark : Styles.light
         }`}
       >
-        {user && <Navbar />}
+        {JWT_TOKEN && <Navbar />}
         <Routes>
-          {user ? (
+          {JWT_TOKEN ? (
             <>
-              <Route path="/" element={<Blog />} />
+              <Route path="/" element={<Blog user={user} />} />
               <Route path="/projects" element={<Project />} />
               <Route path="/about" element={<About />} />
+              <Route path="/create-post" element={<CreateBlog />} />
+              <Route path="/profile" element={<Profile user={user} />} />
+              <Route path="/specific-blog/:postId" element={<SpecificBlog />} />
+              <Route path="/update-post/:postId" element={<UpdateBlog />} />
               <Route path="/newsletter" element={<NewsLetter />} />
-              <Route path="/create-post" element={<CreatePost />} />
             </>
           ) : (
             <>

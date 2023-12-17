@@ -1,0 +1,124 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  min-height: 70vh;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.675rem;
+}
+.toggleButton {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem; /* 8px 16px */
+  background-color: #3bb19b;
+  color: white;
+  border-radius: 5px; /* 10px */
+  font-weight: bold;
+  font-size: 0.875rem; /* 14px */
+  cursor: pointer;
+  margin: 0.625rem;
+}
+
+.toggleButton:hover {
+  background-color: #2e9d88;
+}
+
+.form {
+  width: 100%;
+  margin: 1rem 0; /* 16px 0 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formGroup {
+  width: 80%;
+  margin: 0.5rem 0; /* 8px 0 */
+}
+
+.formGroup label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.25rem; /* 4px */
+}
+.formGroup textarea {
+  height: 150px;
+}
+.formGroup input[type="text"],
+.formGroup textarea {
+  width: 100%;
+  padding: 0.5rem; /* 8px */
+  border: 1px solid #3bb19b;
+  border-radius: 0.3125rem; /* 5px */
+  font-size: 0.875rem; /* 14px */
+}
+
+.formGroup input[type="file"] {
+  display: none;
+}
+
+.formGroup label[for="image"] {
+  width: 15rem; /* 240px */
+  padding: 0.5rem; /* 8px */
+  border: 1px solid #3bb19b;
+  border-radius: 0.3125rem; /* 5px */
+  font-size: 0.875rem; /* 14px */
+  text-align: center;
+  cursor: pointer;
+}
+
+.formGroup label[for="image"]:hover {
+  background-color: #3bb19b;
+  color: white;
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.submitButton {
+  width: 15rem; /* 240px */
+  padding: 0.5rem; /* 8px */
+  border: none;
+  outline: none;
+  background-color: #3bb19b;
+  color: white;
+  border-radius: 0.625rem; /* 10px */
+  font-weight: bold;
+  font-size: 0.875rem; /* 14px */
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #2e9d88;
+}
+
+/* Media query for medium screens */
+
+@media screen and (max-width: 600px) {
+  /* 600px */
+  .formGroup label[for="image"],
+  .submitButton {
+    width: 12rem; /* 192px */
+  }
+}
+
+/* Media query for small screens */
+
+@media screen and (max-width: 480px) {
+  /* 450px */
+  .formGroup label[for="image"],
+  .submitButton {
+    width: 9rem; /* 144px */
+  }
+}

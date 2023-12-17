@@ -3,10 +3,16 @@ import styles from "./About.module.css";
 import Github from "../../assets/images/github.png";
 import LinkedIn from "../../assets/images/linkedin.png";
 import Email from "../../assets/images/email.png";
+import { useSelector } from "react-redux";
+import { selectDarkMode } from "../../Features/ToggleModeSlice";
 
 const About = () => {
+  const darkMode = useSelector(selectDarkMode);
+
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
+    >
       <div className={styles.blog_container}>
         <hr />
         <h1 className={styles.heading}>Rayan Ahmad</h1>

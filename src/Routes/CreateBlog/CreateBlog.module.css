@@ -70,6 +70,12 @@
   color: white;
 }
 
+.image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
 .submitButton {
   width: 15rem; /* 240px */
   padding: 0.5rem; /* 8px */

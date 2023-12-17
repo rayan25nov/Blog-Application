@@ -1,0 +1,86 @@
+/* Dark theme variables */
+.dark {
+  --text-color: #ffffff;
+  --border-color: #424242;
+}
+
+/* Light theme variables */
+.light {
+  --text-color: #333333;
+  --border-color: #cccccc;
+}
+.profile {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+}
+.user_description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+}
+.profile_image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.profile_name {
+  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.profile_email {
+  margin-top: 5px;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text-color);
+}
+
+.profile_role {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: normal;
+  color: var(--text-color);
+}
+
+.profile_verified {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--text-color);
+}
+
+.profile_verified::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-image: url("../../assets/images/verified.png");
+  background-size: cover;
+}
+
+.profile_posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.profile_posts_title {
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-align: center;
+  margin: 1.25rem;
+}

@@ -1,16 +1,32 @@
+/* Import global variables */
+
+/* Dark theme variables */
+.dark {
+  --text-color: #ffffff;
+  --accent-color: var(--dark-accent-color);
+  --border-color: #424242;
+}
+
+/* Light theme variables */
+.light {
+  --text-color: #333333;
+  --accent-color: var(--light-accent-color);
+  --border-color: #cccccc;
+}
 .container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
+
 .blog {
   width: 24rem;
   height: 30rem;
   border-radius: 0.625rem;
-  box-shadow: 0px 0.1875rem 0.1875rem -0.125rem rgb(0 0 0 / 20%),
-    0px 0.1875rem 0.25rem 0px rgb(0 0 0 / 14%),
-    0px 0.0625rem 0.5rem 0px rgb(0 0 0 / 12%);
+  box-shadow: 0px 0.1875rem 0.1875rem -0.125rem var(--border-color),
+    0px 0.1875rem 0.25rem 0px var(--border-color),
+    0px 0.0625rem 0.5rem 0px var(--border-color);
   overflow: hidden;
   position: relative;
   margin-bottom: 1.5rem;
@@ -19,7 +35,7 @@
 
 .blog a {
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
 }
 
 .img {
@@ -40,11 +56,13 @@
 }
 
 .blogHeading {
+  color: var(--text-color);
   font-size: 1.5rem; /* 24px */
   margin: 1rem; /* 16px */
 }
 
 .blogDescription {
+  color: var(--text-color);
   font-size: 0.875rem; /* 14px */
   margin: 0.5rem 1rem; /* 8px 16px */
   line-height: 1.5;
@@ -54,7 +72,7 @@
 
 @media screen and (max-width: 37.5rem) {
   .img {
-    height: 40%;
+    height: 50%;
   }
 
   .date {
@@ -69,27 +87,5 @@
   .blogDescription {
     font-size: 0.75rem; /* 12px */
     margin: 0.25rem 0.75rem; /* 4px 12px */
-  }
-}
-
-/* Media query for small screens */
-
-@media screen and (max-width: 28.125rem) {
-  .img {
-    height: 30%;
-  }
-
-  .date {
-    font-size: 0.625rem; /* 10px */
-  }
-
-  .blogHeading {
-    font-size: 1rem; /* 16px */
-    margin: 0.5rem; /* 8px */
-  }
-
-  .blogDescription {
-    font-size: 0.625rem; /* 10px */
-    margin: 0.125rem 0.5rem; /* 2px 8px */
   }
 }
