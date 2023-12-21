@@ -1,36 +1,49 @@
+/* Dark theme variables */
+.dark {
+  --text-color: #ffffff;
+  --border-color: #424242;
+}
+
+/* Light theme variables */
+.light {
+  --text-color: #333333;
+  --border-color: #cccccc;
+}
+
 .container {
   font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  align-items: flex-start;
-  min-height: 80vh;
+  width: 100%;
+  margin: 0 auto;
 }
+
 .subscribeContainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 500px;
-  min-height: 200px;
+  width: 80%; /* Change to percentage */
+  max-width: 500px; /* Keep max-width in pixels for media queries */
+  height: auto; /* Change to auto */
   margin: 2rem auto;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem; /* Change to rem */
+  border-radius: 1rem; /* Change to rem */
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0.2rem 0.4rem var(--border-color);
 }
 
 .heading {
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: var(--text-color);
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 1rem; /* Change to rem */
 }
 
 .text {
-  font-size: 16px;
-  color: #666;
+  font-size: 1rem; /* Change to rem */
+  color: var(--text-color);
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem; /* Change to rem */
 }
 
 .inputContainer {
@@ -40,22 +53,22 @@
 }
 
 .inputContainer input {
-  width: 70%;
-  height: 40px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 70%; /* Change to percentage */
+  height: 2.5rem; /* Change to rem */
+  padding: 1rem; /* Change to rem */
+  border: 1px solid var(--text-color);
+  border-radius: 0.5rem; /* Change to rem */
   outline: none;
 }
 
 .button {
-  width: 20%;
-  height: 40px;
-  margin-left: 10px;
+  width: 20%; /* Change to percentage */
+  height: 2.5rem; /* Change to rem */
+  margin-left: 1rem; /* Change to rem */
   background-color: #333;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem; /* Change to rem */
   cursor: pointer;
 }
 
@@ -63,22 +76,27 @@
   background-color: #444;
 }
 
+.newscards {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 760px) {
   .container {
     flex-direction: column;
     align-items: center;
   }
-  .subscribeContainer {
-    min-width: 400px;
-  }
 }
 
 @media screen and (max-width: 480px) {
   .container {
-    padding: 10px;
+    padding: 1rem;
   }
   .subscribeContainer {
-    min-width: 300px;
+    width: 100%;
   }
   .inputContainer input {
     width: 60%;

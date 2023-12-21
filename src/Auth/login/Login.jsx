@@ -19,10 +19,10 @@ const Login = () => {
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.token);
       window.location = "/";
-    } catch (error) {
-      console.log(error.response.data.error);
-      if (!error.response.data.success) {
-        setError(error.response.data.error);
+    } catch (err) {
+      console.log(err.response.data.message);
+      if (!err.response.data.success) {
+        setError(err.response.data.message);
       }
     }
   };

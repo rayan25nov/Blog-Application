@@ -82,6 +82,24 @@ hr {
   justify-content: space-evenly;
   align-items: center;
 }
+/* Add this to your existing CSS or create a new stylesheet */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 @media screen and (max-width: 37.5rem) {
   .heading {
     font-size: 2rem; /* 32px */

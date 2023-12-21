@@ -3,6 +3,8 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "./SpecificBlog.module.css";
 
 const SpecificBlog = () => {
@@ -15,22 +17,34 @@ const SpecificBlog = () => {
     const url = `${apiUrl}/posts/${postId}`;
     const { data: res } = await axios.get(url);
     setBlog(res.post);
+    // console.log(res.post);
   };
   useEffect(() => {
     fetchPost();
   }, []);
 
   const deletePost = async () => {
-    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-    const url = `${apiUrl}/posts/${postId}`;
-    const JWT_TOKEN = localStorage.getItem("token");
-    await axios.delete(url, {
-      headers: {
-        Authorization: `Bearer ${JWT_TOKEN}`,
-      },
-    });
-    navigate("/");
-    window.location.reload();
+    try {
+      const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+      const url = `${apiUrl}/posts/${postId}`;
+      const JWT_TOKEN = localStorage.getItem("token");
+      await axios.delete(url, {
+        headers: {
+          Authorization: `Bearer ${JWT_TOKEN}`,
+        },
+      });
+      navigate("/");
+      window.location.reload();
+    } catch (error) {
+      toast.error(`${error.response.data.message}`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
   };
 
   return (
@@ -41,6 +55,7 @@ const SpecificBlog = () => {
       <h1 className={styles.heading}>{blog.title}</h1>
       <img src={blog.image} alt="Blog Image" className={styles.image} />
       <p className={styles.description}>{blog.description}</p>
+
       <div className={styles.buttons}>
         <Link className={styles.link} to={`/update-post/${postId}`}>
           Update Post
@@ -49,6 +64,8 @@ const SpecificBlog = () => {
           Delete Post
         </button>
       </div>
+      {/* Toast container for notifications */}
+      <ToastContainer />
     </div>
   );
 };

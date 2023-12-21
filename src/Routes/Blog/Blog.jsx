@@ -22,7 +22,7 @@ const Blog = (props) => {
         },
       });
       const posts = res.posts;
-      console.log(posts);
+      // console.log(posts);
       setPosts(posts);
     } catch (error) {
       console.error(error);

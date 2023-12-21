@@ -2,21 +2,25 @@
 .dark {
   --text-color: #ffffff;
   --border-color: #424242;
+  --background-color: #121319;
 }
 
 /* Light theme variables */
 .light {
   --text-color: #333333;
   --border-color: #cccccc;
+  --background-color: #f0f0f0;
 }
 .container {
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
   align-items: center;
   max-width: 480px;
   height: 100%;
   margin: 20px;
   border-radius: 10px;
+  border: 1px solid var(--border-color);
   box-shadow: 0 4px 8px var(--border-color);
 }
 

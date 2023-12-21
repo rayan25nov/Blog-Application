@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { selectDarkMode } from "../../Features/ToggleModeSlice";
+import { useSelector } from "react-redux";
 import styles from "../UpdateBlog/UpdateBlog.module.css";
 
 const CreateBlog = () => {
-  
+  const darkMode = useSelector(selectDarkMode);
   // State hooks for the post title, description, and image
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
+  const [readImg, setReadImg] = useState(null);
 
   // Function to handle the form submission
   const handleSubmit = async (e) => {
@@ -46,6 +49,7 @@ const CreateBlog = () => {
       setTitle("");
       setDescription("");
       setImage(null);
+      setReadImg(null);
 
       // Display success notification
       toast.success("Post created successfully", {
@@ -71,6 +75,7 @@ const CreateBlog = () => {
       setTitle("");
       setDescription("");
       setImage(null);
+      setReadImg(null);
     }
   };
 
@@ -81,11 +86,18 @@ const CreateBlog = () => {
       alert("Please upload an image file");
       return;
     }
+    const reader = new FileReader();
+    reader.onload = () => {
+      setReadImg(reader.result);
+    };
+    reader.readAsDataURL(file);
     setImage(file);
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
+    >
       <h1 className={styles.heading}>Create Blog</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
@@ -110,10 +122,14 @@ const CreateBlog = () => {
         <div className={styles.formGroup}>
           <label htmlFor="image">Image</label>
           <div>
-            {image ? (
-              <img src={image} alt="Uploaded image" className={styles.image} />
+            {readImg ? (
+              <img
+                src={readImg}
+                alt="Uploaded image"
+                className={styles.image}
+              />
             ) : (
-              <p>No image uploaded</p>
+              <p className={styles.text}>No image uploaded</p>
             )}
           </div>
           <input

@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { selectDarkMode } from "../../Features/ToggleModeSlice";
+import { useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "./UpdateBlog.module.css";
 
 const UpdateBlog = () => {
+  const darkMode = useSelector(selectDarkMode);
   // State hooks for the post title, description, and image
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
+  const [readImg, setReadImg] = useState(null);
+
   const { postId } = useParams();
   // Function to handle the form submission
   const handleSubmit = async (e) => {
@@ -35,12 +42,22 @@ const UpdateBlog = () => {
       setTitle("");
       setDescription("");
       setImage(null);
+      setReadImg(null);
     } catch (error) {
       console.log(error);
+      toast.error(`${error.response.data.message}`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       // Reset the form
       setTitle("");
       setDescription("");
       setImage(null);
+      setReadImg(null);
     }
   };
 
@@ -51,11 +68,18 @@ const UpdateBlog = () => {
       alert("Please upload an image file");
       return;
     }
+    const reader = new FileReader();
+    reader.onload = () => {
+      setReadImg(reader.result);
+    };
+    reader.readAsDataURL(file);
     setImage(file);
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
+    >
       <h1 className={styles.heading}>Update Post</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
@@ -84,10 +108,14 @@ const UpdateBlog = () => {
         <div className={styles.formGroup}>
           <label htmlFor="image">Image</label>
           <div>
-            {image ? (
-              <img src={image} alt="Uploaded image" className={styles.image} />
+            {readImg ? (
+              <img
+                src={readImg}
+                alt="Uploaded image"
+                className={styles.image}
+              />
             ) : (
-              <p>No image uploaded</p>
+              <p className={styles.text}>No image uploaded</p>
             )}
           </div>
           <input
@@ -104,6 +132,8 @@ const UpdateBlog = () => {
           </button>
         </div>
       </form>
+      {/* Toast container for notifications */}
+      <ToastContainer />
     </div>
   );
 };

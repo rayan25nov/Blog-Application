@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Weather Application",
     "description": "Weather App is a simple and elegant web application that lets you check the current weather conditions of any city in the world. You can switch between dark and light modes, use your current location, or search for a city using the input bar. Weather App is built using React and Modular CSS, and uses OpenWeather API to fetch weather data.",
-    "image": "src/assets/images/weather_app.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844477/projects/weather_app_mmz6ah.gif",
     "github": "https://github.com/rayan25nov/Weather-Application",
     "vercel": "https://weather-application-vert-alpha.vercel.app/"
   },
@@ -11,7 +11,7 @@
     "id": "2",
     "title": "Url Shortener",
     "description": "URL-Shortener is a web application that allows you to transform long and cumbersome URLs into short and easy ones. You can enter any valid URL and get a shortened version using nanoid. URL-Shortener is built using node.js, express.js, mongoDb, and static files like html, css, javascript. It also has a light/dark mode feature that you can toggle.",
-    "image": "src/assets/images/url_shortener_app.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844480/projects/url_shortener_app_zhe2q3.gif",
     "github": "https://github.com/rayan25nov/Url-Shortener",
     "vercel": "https://url-shortener-ten-sigma.vercel.app/"
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "title": "Expanding Cards",
     "description": "Expanding-Cards is a web application that showcases a collection of beautiful images in a responsive grid layout. You can click on any image to expand it and see more details. Expanding-Cards is built using html, css and javascript.",
-    "image": "src/assets/images/expanding_cards.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844475/projects/expanding_cards_soq2rw.gif",
     "github": "https://github.com/rayan25nov/Expanding-Cards",
     "vercel": "https://expanding-cards-azure.vercel.app/"
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "title": "Movie Overview App",
     "description": "Movie-Overview is a web application that lets you browse and discover movies from various genres and categories. You can see the ratings, summaries, and posters of each movie, powered by themoviedb API. Movie-Overview is built using html, css and javascript.",
-    "image": "src/assets/images/movie_overview.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844477/projects/movie_overview_qhkby9.gif",
     "github": "https://github.com/rayan25nov/Movie-Overview-App",
     "vercel": "https://movie-overview-app.vercel.app/"
   },
@@ -35,7 +35,7 @@
     "id": "5",
     "title": "Personal Portfolio",
     "description": "My Portfolio is a web application that displays my work as a web developer. You can explore my projects, skills, and experience using React, React-Bootstrap, and Firebase. My Portfolio is a reflection of my passion and creativity in web development.",
-    "image": "src/assets/images/personal_portfolio.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844477/projects/personal_portfolio_ysa99c.gif",
     "github": "https://github.com/rayan25nov/Portfolio",
     "vercel": "https://portfolio-rayan25nov.vercel.app/"
   },
@@ -43,7 +43,7 @@
     "id": "6",
     "title": "Calculator App",
     "description": "Calculator is a web application that lets you perform basic arithmetic operations with a simple and elegant interface. You can use the buttons or the keyboard to enter numbers and operators. Calculator is built using React, Material UI, and CSS.",
-    "image": "src/assets/images/calculator.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844471/projects/calculator_rsfwde.gif",
     "github": "https://github.com/rayan25nov/Calculator-App",
     "vercel": "https://calculator-app-nu-red.vercel.app/"
   },
@@ -51,7 +51,7 @@
     "id": "7",
     "title": "Dictionary App",
     "description": "Dictionary is a web application that lets you search for the meanings, synonyms, and examples of any word in multiple languages. You can use the elegant and responsive interface, powered by React, Material UI, and CSS, to access the dictionaryapi.dev API. Dictionary also has a dark and light mode feature that you can toggle.",
-    "image": "src/assets/images/dictionary.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844472/projects/dictionary_zihuiv.gif",
     "github": "https://github.com/rayan25nov/Dictionary-App",
     "vercel": "https://dictionary-app-jmku.vercel.app/"
   },
@@ -67,7 +67,7 @@
     "id": "9",
     "title": "First Project",
     "description": "My First Project is a web application that showcases my skills and creativity in web development. I have used html, css, javascript, and materialize framework to create a responsive and attractive interface. My First Project is a demonstration of my passion and potential in web development.",
-    "image": "src/assets/images/first_project.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844475/projects/first_project_mqb16k.gif",
     "github": "https://github.com/rayan25nov/My-First-Project",
     "vercel": "https://my-first-project-steel.vercel.app/"
   },
@@ -75,7 +75,7 @@
     "id": "10",
     "title": "Create Notes",
     "description": "Create Notes is a web application that lets you organize your tasks and thoughts in a simple and intuitive way. You can create notes with different tags, such as work, todos, or reminders, and also delete them when you are done. Create Notes is built using the MERN stack and Material UI.",
-    "image": "src/assets/images/create_notes.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844471/projects/create_notes_bncfcf.gif",
     "github": "https://github.com/rayan25nov/Create-Notes",
     "vercel": "https://create-notes.vercel.app/"
   }
