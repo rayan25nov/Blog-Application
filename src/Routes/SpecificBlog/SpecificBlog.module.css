@@ -36,9 +36,10 @@
 
 .image {
   min-height: 426px;
+  max-height: 500px;
   width: 100%;
   align-self: stretch;
-  object-fit: cover;
+  object-fit: contain;
   overflow: hidden;
   margin-bottom: 20px;
 }

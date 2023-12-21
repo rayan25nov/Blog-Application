@@ -59,7 +59,7 @@
     "id": "8",
     "title": "Restaurant Management System",
     "description": "Restaurant Management System is a web application that allows you to manage your restaurant operations with ease and efficiency. You can create menus, track orders, manage inventory, and generate reports using the MERN stack.",
-    "image": "src/assets/images/retaurant_client.gif",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1703187234/projects/Restaurant_Management_Application_hxaksm.gif",
     "github": "https://github.com/rayan25nov/restaurant-client",
     "vercel": "https://restaurant-client-sigma.vercel.app/"
   },

@@ -9,28 +9,32 @@ import axios from "axios";
 const Blog = (props) => {
   const darkMode = useSelector(selectDarkMode);
   const [posts, setPosts] = useState([]);
-  // fetch blog related data
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [postsPerPage] = useState(10);
+
   const fetchData = async () => {
     try {
       const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-      const url = `${apiUrl}/posts`;
+      const url = `${apiUrl}/posts?page=${currentPage}&pageSize=${postsPerPage}`;
       const JWT_TOKEN = localStorage.getItem("token");
-      // Correct the typo in the header name from "Authorisation" to "Authorization"
       const { data: res } = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${JWT_TOKEN}`,
         },
       });
-      const posts = res.posts;
-      // console.log(posts);
-      setPosts(posts);
+      const fetchedPosts = res.posts;
+      const totalPages = res.totalPages;
+      setPosts(fetchedPosts);
+      setTotalPages(totalPages);
     } catch (error) {
       console.error(error);
     }
   };
+
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [currentPage]);
 
   return (
     <div
@@ -62,6 +66,21 @@ const Blog = (props) => {
             />
           </div>
         ))}
+      </div>
+      <div className={styles.pagination}>
+        <button
+          onClick={() => setCurrentPage(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <span>{currentPage}</span>
+        <button
+          onClick={() => setCurrentPage(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
