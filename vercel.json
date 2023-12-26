@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "preBuild": {
+      "command": "npm install"
+    },
+    "build": {
+      "env": {
+        "NODE_ENV": "production",
+        "VITE_ENV": "production"
+      }
+    }
+  }
+}
