@@ -6,6 +6,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./SpecificBlog.module.css";
+import Comments from "../Comments/Comments";
 
 const SpecificBlog = () => {
   const darkMode = useSelector(selectDarkMode);
@@ -63,6 +64,9 @@ const SpecificBlog = () => {
         <button className={styles.btn} onClick={deletePost}>
           Delete Post
         </button>
+      </div>
+      <div className={styles.comment_section}>
+        <Comments postId={postId} />
       </div>
       {/* Toast container for notifications */}
       <ToastContainer />
