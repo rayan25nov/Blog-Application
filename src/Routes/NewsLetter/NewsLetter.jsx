@@ -8,17 +8,18 @@ import styles from "./NewsLetter.module.css";
 const Newsletter = () => {
   const darkMode = useSelector(selectDarkMode);
   const [articles, setArticles] = useState([]);
-  const apiKey = import.meta.env.VITE_REACT_APP_NEWS_API;
-  const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
+  // Endpoint to the serverless function
+  const url = "/api/news";
   const fetchData = async () => {
     try {
       const { data: res } = await axios.get(url);
       console.log(res.articles);
       setArticles(res.articles);
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching news:", error);
     }
   };
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -55,17 +56,21 @@ const Newsletter = () => {
         <p></p>
       </div>
       <div className={styles.newscards}>
-        {articles.map((article) => (
-          <NewsCard
-            key={article.url}
-            name={article.source.name}
-            author={article.author}
-            title={article.title}
-            description={article.description}
-            image={article.urlToImage}
-            url={article.url}
-          />
-        ))}
+        {articles && articles.length > 0 ? (
+          articles.map((article) => (
+            <NewsCard
+              key={article.url}
+              name={article.source.name}
+              author={article.author}
+              title={article.title}
+              description={article.description}
+              image={article.urlToImage}
+              url={article.url}
+            />
+          ))
+        ) : (
+          <p>No articles available</p>
+        )}
       </div>
     </div>
   );
