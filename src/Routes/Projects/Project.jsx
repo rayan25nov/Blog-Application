@@ -1,5 +1,6 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
+// import ProjectCard from "./ProjectCard";
+import Card from "../Card/Card";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import styles from "./Project.module.css";
@@ -18,8 +19,8 @@ const Project = () => {
       <div className={styles.card_container}>
         {projects.map((project) => (
           <div key={project.id}>
-            <ProjectCard
-              cardimg={project.image}
+            <Card
+              imageUrl={project.image}
               title={project.title}
               description={project.description}
               github={project.github}

@@ -1,5 +1,5 @@
 import React from "react";
-import BlogCard from "../Card/BlogCard";
+import Card from "../Card/Card";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import styles from "./Profile.module.css";
@@ -32,7 +32,7 @@ const Profile = (props) => {
         {props.user.posts &&
           props.user.posts.map((post) => (
             <div key={post._id}>
-              <BlogCard
+              <Card
                 title={post.title}
                 description={post.description}
                 imageUrl={post.image}

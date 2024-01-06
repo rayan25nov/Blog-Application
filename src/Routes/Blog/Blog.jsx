@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
-import BlogCard from "../Card/BlogCard";
+import Card from "../Card/Card";
 import styles from "./Blog.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -57,7 +57,7 @@ const Blog = (props) => {
       <div className={styles.blogs_container}>
         {posts.map((post) => (
           <div key={post._id}>
-            <BlogCard
+            <Card
               title={post.title}
               description={post.description}
               imageUrl={post.image}
