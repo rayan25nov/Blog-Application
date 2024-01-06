@@ -3,6 +3,11 @@
   width: 100%;
   min-height: 100vh;
   background-color: #f5f5f5;
+  background-image: url(../../assets/images/authenticate.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,7 +108,7 @@
 
 @media screen and (max-width: 800px) {
   .signup_form_container {
-    width: 80%;
+    width: 90%;
     min-height: 70%;
     flex-direction: column-reverse;
   }
@@ -148,7 +153,9 @@
 /* Media query for small screens */
 
 @media screen and (max-width: 480px) {
-	
+  .signup_container {
+    min-width: 90%;
+  }
   .left h1 {
     font-size: 1.5rem; /* 24px / 16px */
   }
