@@ -11,9 +11,13 @@ const Newsletter = () => {
   const apiKey = import.meta.env.VITE_REACT_APP_NEWS_API;
   const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
   const fetchData = async () => {
-    const { data: res } = await axios.get(url);
-    console.log(res.articles);
-    setArticles(res.articles);
+    try {
+      const { data: res } = await axios.get(url);
+      console.log(res.articles);
+      setArticles(res.articles);
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     fetchData();
