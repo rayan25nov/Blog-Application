@@ -4,10 +4,11 @@ import styles from "./Comments.module.css";
 import deleteImage from "../../assets/images/delete.png";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Comments = ({ postId }) => {
   const darkMode = useSelector(selectDarkMode);
-
   const [triggerFetch, setTriggerFetch] = useState(false);
   const [allComments, SetAllComments] = useState([]);
   const [comment, setComment] = useState("");
@@ -27,7 +28,7 @@ const Comments = ({ postId }) => {
         Authorization: `Bearer ${JWT_TOKEN}`,
       },
     });
-    console.log(res);
+    // console.log(res);
     // Trigger the effect to fetch comments again
     setTriggerFetch(!triggerFetch);
     setComment("");
@@ -50,14 +51,25 @@ const Comments = ({ postId }) => {
   // Function to Delete a Specific Comment
   const deleteComment = async (commentId) => {
     const url = `${apiUrl}/posts/comment/${postId}/${commentId}`;
-    // Make the DELETE request to the API
-    const { data: res } = await axios.delete(url, {
-      headers: {
-        Authorization: `Bearer ${JWT_TOKEN}`,
-      },
-    });
-    // Trigger the effect to fetch comments again
-    setTriggerFetch(!triggerFetch);
+    try {
+      // Make the DELETE request to the API
+      const { data: res } = await axios.delete(url, {
+        headers: {
+          Authorization: `Bearer ${JWT_TOKEN}`,
+        },
+      });
+      // Trigger the effect to fetch comments again
+      setTriggerFetch(!triggerFetch);
+    } catch (error) {
+      toast.error(`${error.response.data.message}`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
   };
 
   // Calling Fetch comment
@@ -98,6 +110,8 @@ const Comments = ({ postId }) => {
           </div>
         </div>
       ))}
+      {/* Toast container for notifications */}
+      <ToastContainer />
     </div>
   );
 };

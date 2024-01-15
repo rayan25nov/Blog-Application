@@ -12,6 +12,7 @@ const SpecificBlog = () => {
   const darkMode = useSelector(selectDarkMode);
   const [blog, setBlog] = useState({});
   const { postId } = useParams();
+  
   const navigate = useNavigate();
   const fetchPost = async () => {
     const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
@@ -22,7 +23,7 @@ const SpecificBlog = () => {
   };
   useEffect(() => {
     fetchPost();
-  }, []);
+  }, [postId]);
 
   const deletePost = async () => {
     try {
@@ -47,7 +48,6 @@ const SpecificBlog = () => {
       });
     }
   };
-
   return (
     <div
       className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
