@@ -83,6 +83,24 @@ hr {
   align-items: center;
 }
 
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 24px;
+  color: #fff;
+  background-color: #000;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+
 .pagination {
   display: flex;
   align-items: center;

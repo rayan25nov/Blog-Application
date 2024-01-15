@@ -55,7 +55,7 @@ const Blog = (props) => {
       </div>
       <p className={styles.para}>All blog posts</p>
       <div className={styles.blogs_container}>
-        {posts.length === 0 && <p>...Loading</p>}
+        {posts.length === 0 && <p className={styles.loading}>...Loading</p>}
         {posts.map((post) => (
           <div key={post._id}>
             <Card

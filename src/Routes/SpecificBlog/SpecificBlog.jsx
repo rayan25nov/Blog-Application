@@ -60,7 +60,7 @@ const SpecificBlog = () => {
 
   // Show loading indicator while data is being fetched
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className={styles.loading}>Loading...</div>;
   }
 
   // Render the content once data is fetched
