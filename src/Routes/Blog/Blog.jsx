@@ -44,62 +44,66 @@ const Blog = (props) => {
   }, [currentPage]);
 
   return (
-    <div
-      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
-    >
+    <div>
       {loading && <div className={styles.loading}>Loading...</div>}
-      {!loading && (
-        // Render content once data is fetched
-        <>
-          <hr />
-          <div className={styles.hero_section}>
-            <h1 className={styles.heading}>THE BLOG</h1>
-            <Link to={"/profile"}>
-              <img
-                src={props.user.image}
-                alt="Hero icon"
-                className={styles.hero}
-              />
-            </Link>
-          </div>
-          <hr />
-
-          <div className={styles.link_container}>
-            <Link to="/create-post" className={styles.link}>
-              Create Blog
-            </Link>
-          </div>
-          <p className={styles.para}>All blog posts</p>
-          <div className={styles.blogs_container}>
-            {posts.map((post) => (
-              <div key={post._id}>
-                <Card
-                  title={post.title}
-                  description={post.description}
-                  imageUrl={post.image}
-                  date={post.createdAt}
-                  postId={post._id}
+      <div
+        className={`${styles.container} ${
+          darkMode ? styles.dark : styles.light
+        }`}
+      >
+        {!loading && (
+          // Render content once data is fetched
+          <>
+            <hr />
+            <div className={styles.hero_section}>
+              <h1 className={styles.heading}>THE BLOG</h1>
+              <Link to={"/profile"}>
+                <img
+                  src={props.user.image}
+                  alt="Hero icon"
+                  className={styles.hero}
                 />
-              </div>
-            ))}
-          </div>
-          <div className={styles.pagination}>
-            <button
-              onClick={() => setCurrentPage(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Previous
-            </button>
-            <span>{currentPage}</span>
-            <button
-              onClick={() => setCurrentPage(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          </div>
-        </>
-      )}
+              </Link>
+            </div>
+            <hr />
+
+            <div className={styles.link_container}>
+              <Link to="/create-post" className={styles.link}>
+                Create Blog
+              </Link>
+            </div>
+            <p className={styles.para}>All blog posts</p>
+            <div className={styles.blogs_container}>
+              {posts.map((post) => (
+                <div key={post._id}>
+                  <Card
+                    title={post.title}
+                    description={post.description}
+                    imageUrl={post.image}
+                    date={post.createdAt}
+                    postId={post._id}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className={styles.pagination}>
+              <button
+                onClick={() => setCurrentPage(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                Previous
+              </button>
+              <span>{currentPage}</span>
+              <button
+                onClick={() => setCurrentPage(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 };
