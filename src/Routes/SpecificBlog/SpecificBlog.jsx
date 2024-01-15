@@ -8,19 +8,28 @@ import "react-toastify/dist/ReactToastify.css";
 import styles from "./SpecificBlog.module.css";
 import Comments from "../Comments/Comments";
 
+
 const SpecificBlog = () => {
   const darkMode = useSelector(selectDarkMode);
   const [blog, setBlog] = useState({});
+  const [loading, setLoading] = useState(true); // Add loading state
   const { postId } = useParams();
-  
+
   const navigate = useNavigate();
   const fetchPost = async () => {
-    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-    const url = `${apiUrl}/posts/${postId}`;
-    const { data: res } = await axios.get(url);
-    setBlog(res.post);
-    // console.log(res.post);
+    try {
+      const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+      const url = `${apiUrl}/posts/${postId}`;
+      const { data: res } = await axios.get(url);
+      setBlog(res.post);
+    } catch (error) {
+      console.error("Error fetching post:", error);
+      // Handle error fetching post (e.g., redirect to an error page)
+    } finally {
+      setLoading(false); // Set loading to false regardless of success or failure
+    }
   };
+
   useEffect(() => {
     fetchPost();
   }, [postId]);
@@ -38,7 +47,7 @@ const SpecificBlog = () => {
       navigate("/");
       window.location.reload();
     } catch (error) {
-      toast.error(`${error.response.data.message}`, {
+      toast.error(`${error.response?.data?.message || "An error occurred"}`, {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -48,6 +57,13 @@ const SpecificBlog = () => {
       });
     }
   };
+
+  // Show loading indicator while data is being fetched
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Render the content once data is fetched
   return (
     <div
       className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
