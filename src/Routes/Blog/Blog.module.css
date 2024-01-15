@@ -87,10 +87,10 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 80vh;
   font-size: 24px;
   color: #fff;
-  background-color: #000;
+  background-color: #000000ea;
   animation: blink 1s infinite;
 }
 
@@ -99,7 +99,6 @@ hr {
     opacity: 0.5;
   }
 }
-
 
 .pagination {
   display: flex;
