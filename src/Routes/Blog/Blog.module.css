@@ -85,19 +85,11 @@ hr {
 
 .loading {
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 80vh;
-  font-size: 24px;
-  color: #fff;
-  background-color: #000000ea;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0.5;
-  }
+  align-items: center;
+  height: 100vh; /* Adjust this based on your layout */
+  font-size: 1.5rem;
+  color: #333; /* Adjust the color as needed */
 }
 
 .pagination {
