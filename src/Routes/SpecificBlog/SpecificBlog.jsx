@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./SpecificBlog.module.css";
 import Comments from "../Comments/Comments";
-
+import LikeButton from "../Likes/LikeButton";
 
 const SpecificBlog = () => {
   const darkMode = useSelector(selectDarkMode);
@@ -81,6 +81,7 @@ const SpecificBlog = () => {
           Delete Post
         </button>
       </div>
+      <LikeButton postId={postId} />
       <div className={styles.comment_section}>
         <Comments postId={postId} />
       </div>

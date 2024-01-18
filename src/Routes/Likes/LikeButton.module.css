@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button img {
+  width: 40px;
+  height: 40px;
+}
+
+.likes {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 10px;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.9);
+}

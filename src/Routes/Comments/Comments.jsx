@@ -5,7 +5,6 @@ import deleteImage from "../../assets/images/delete.png";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Comments = ({ postId }) => {
   const darkMode = useSelector(selectDarkMode);
