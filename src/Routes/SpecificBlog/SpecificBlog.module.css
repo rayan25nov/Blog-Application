@@ -14,11 +14,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust this based on your layout */
+  height: 100vh;
   font-size: 1.5rem;
-  color: #333; /* Adjust the color as needed */
+  color: var(--text-color);
 }
-
 
 .container {
   max-width: 800px;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Loader from "../../loader/Loader";
 import styles from "./Signup.module.css";
 
 const Signup = () => {
@@ -9,6 +10,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false); // New state for loading
 
   // Initialize errors state as an object
   const [error, setError] = useState(null);
@@ -21,6 +23,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true); // Set loading to true while waiting for the API response
       const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
       const url = `${apiUrl}/users/signup`;
       const { data: res } = await axios.post(url, data);
@@ -37,6 +40,9 @@ const Signup = () => {
         // Set errors as an object
         setError(error.response.data.errors);
       }
+    } finally {
+      // Reset loading after the API response, whether successful or not
+      setLoading(false);
     }
   };
 
@@ -90,6 +96,8 @@ const Signup = () => {
               </div>
             )}
             {msg && <div className={styles.success_msg}>{msg}</div>}
+            {loading && <Loader />}
+            {/* New loading message */}
             <button type="submit" className={styles.green_btn}>
               Sign Up
             </button>

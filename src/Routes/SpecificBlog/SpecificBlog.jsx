@@ -5,9 +5,10 @@ import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import styles from "./SpecificBlog.module.css";
 import Comments from "../Comments/Comments";
 import LikeButton from "../Likes/LikeButton";
+import Loader from "../../loader/Loader";
+import styles from "./SpecificBlog.module.css";
 
 const SpecificBlog = () => {
   const darkMode = useSelector(selectDarkMode);
@@ -60,7 +61,14 @@ const SpecificBlog = () => {
 
   // Show loading indicator while data is being fetched
   if (loading) {
-    return <div className={styles.loading}>Loading...</div>;
+    return (
+      <div
+        className={`${styles.loading} ${darkMode ? styles.dark : styles.light}`}
+      >
+        <p>Loading...</p>
+        <Loader />
+      </div>
+    );
   }
 
   // Render the content once data is fetched

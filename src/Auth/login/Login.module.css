@@ -103,7 +103,6 @@
   color: white;
   margin: 0.625rem; /* 10px / 16px */
 }
-
 /* Media query for small screens */
 
 @media screen and (max-width: 46.875rem) {

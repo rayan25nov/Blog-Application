@@ -4,6 +4,7 @@ import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import Card from "../Card/Card";
 import styles from "./Blog.module.css";
 import { Link } from "react-router-dom";
+import Loader from "../../loader/Loader";
 import axios from "axios";
 
 // ... (imports and other code)
@@ -45,7 +46,16 @@ const Blog = (props) => {
 
   return (
     <div>
-      {loading && <div className={styles.loading}>Loading...</div>}
+      {loading && (
+        <div
+          className={`${styles.loading} ${
+            darkMode ? styles.dark : styles.light
+          }`}
+        >
+          <p>Loading...</p>
+          <Loader />
+        </div>
+      )}
       <div
         className={`${styles.container} ${
           darkMode ? styles.dark : styles.light
