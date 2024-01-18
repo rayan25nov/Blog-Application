@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Loader from "../../loader/Loader";
 import styles from "./Login.module.css";
 
 const Login = () => {
