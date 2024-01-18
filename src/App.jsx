@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "./Features/ToggleModeSlice";
 import {
@@ -6,6 +6,7 @@ import {
   Routes,
   Route,
   Navigate,
+  useLocation,
 } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar/Navbar.jsx";
@@ -21,6 +22,14 @@ import SpecificBlog from "./Routes/SpecificBlog/SpecificBlog.jsx";
 import UpdateBlog from "./Routes/UpdateBlog/UpdateBlog.jsx";
 import NewsLetter from "./Routes/NewsLetter/NewsLetter.jsx";
 import Styles from "./App.module.css";
+
+const Wrapper = ({ children }) => {
+  const location = useLocation();
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
+  return children;
+};
 
 const App = () => {
   const darkMode = useSelector(selectDarkMode);
@@ -51,30 +60,35 @@ const App = () => {
         }`}
       >
         {JWT_TOKEN && <Navbar />}
-        <Routes>
-          {JWT_TOKEN ? (
-            <>
-              <Route path="/" element={<Blog user={user} />} />
-              <Route path="/projects" element={<Project />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/create-post" element={<CreateBlog />} />
-              <Route path="/profile" element={<Profile user={user} />} />
-              <Route path="/specific-blog/:postId" element={<SpecificBlog />} />
-              <Route path="/update-post/:postId" element={<UpdateBlog />} />
-              <Route path="/newsletter" element={<NewsLetter />} />
-            </>
-          ) : (
-            <>
-              <Route path="/signup" exact element={<Signup />} />
-              <Route path="/login" exact element={<Login />} />
-              <Route path="/" element={<Navigate replace to="/login" />} />
-              <Route
-                path="/users/:id/verify/:token"
-                element={<EmailVerify />}
-              />
-            </>
-          )}
-        </Routes>
+        <Wrapper>
+          <Routes>
+            {JWT_TOKEN ? (
+              <>
+                <Route path="/" element={<Blog user={user} />} />
+                <Route path="/projects" element={<Project />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/create-post" element={<CreateBlog />} />
+                <Route path="/profile" element={<Profile user={user} />} />
+                <Route
+                  path="/specific-blog/:postId"
+                  element={<SpecificBlog />}
+                />
+                <Route path="/update-post/:postId" element={<UpdateBlog />} />
+                <Route path="/newsletter" element={<NewsLetter />} />
+              </>
+            ) : (
+              <>
+                <Route path="/signup" exact element={<Signup />} />
+                <Route path="/login" exact element={<Login />} />
+                <Route path="/" element={<Navigate replace to="/login" />} />
+                <Route
+                  path="/users/:id/verify/:token"
+                  element={<EmailVerify />}
+                />
+              </>
+            )}
+          </Routes>
+        </Wrapper>
       </div>
     </Router>
   );

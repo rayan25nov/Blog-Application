@@ -30,8 +30,8 @@ const Navbar = () => {
       const url = `${apiUrl}/users/logout`;
       await axios.post(url);
       localStorage.removeItem("token");
-      navigate("/");
       window.location.reload();
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
