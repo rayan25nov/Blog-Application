@@ -1,3 +1,11 @@
+.dark {
+  --text-color: #ffffff;
+}
+
+/* Light theme variables */
+.light {
+  --text-color: #333333;
+}
 .container {
   display: flex;
   align-items: center;
@@ -6,10 +14,12 @@
 }
 
 .button {
+  display: flex;
   border: none;
   outline: none;
   cursor: pointer;
   margin: 20px;
+  border-radius: 50%;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -22,7 +32,7 @@
   font-family: Arial, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  color: #333;
+  color: var(--text-color);
   margin: 0 10px;
 }
 

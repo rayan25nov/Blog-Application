@@ -3,10 +3,13 @@ import axios from "axios";
 import Like from "../../assets/images/like.png";
 import Dislike from "../../assets/images/dislike.png";
 import { ToastContainer, toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import styles from "./LikeButton.module.css";
 
 const LikeButton = ({ postId }) => {
   const [likes, setLikes] = useState(0);
+  const darkMode = useSelector(selectDarkMode);
 
   const JWT_TOKEN = localStorage.getItem("token");
   const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
@@ -77,7 +80,9 @@ const LikeButton = ({ postId }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
+    >
       <button onClick={handleLike} className={styles.button}>
         <img src={Like} alt="Md Tanvirul Haque" />
       </button>
