@@ -3,6 +3,7 @@ import NewsCard from "./NewsCard";
 import axios from "axios";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import { useSelector } from "react-redux";
+import Loader from "../../loader/Loader";
 import styles from "./NewsLetter.module.css";
 
 const Newsletter = () => {
@@ -69,7 +70,7 @@ const Newsletter = () => {
             />
           ))
         ) : (
-          <p>No articles available</p>
+          <Loader />
         )}
       </div>
     </div>
