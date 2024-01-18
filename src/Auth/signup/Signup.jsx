@@ -23,13 +23,14 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true); // Set loading to true while waiting for the API response
+      // Set loading to true while waiting for the API response
+      setLoading(true);
+      // Clear errors on Button Click
+      setError(null);
       const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
       const url = `${apiUrl}/users/signup`;
       const { data: res } = await axios.post(url, data);
       setMsg(res.message);
-      // Clear errors on successful submission
-      setError(null);
     } catch (error) {
       console.log(error);
       if (

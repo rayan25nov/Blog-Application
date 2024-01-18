@@ -18,6 +18,8 @@ const Login = () => {
     try {
       // Set loading to true while waiting for the API response
       setLoading(true);
+      // Clear errors on Button Click
+      setError("");
       const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
       const url = `${apiUrl}/users/signin`;
       const { data: res } = await axios.post(url, data);
