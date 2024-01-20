@@ -26,9 +26,17 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
+      const JWT_TOKEN = localStorage.getItem("token");
+      if (!JWT_TOKEN) {
+        return;
+      }
       const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
       const url = `${apiUrl}/users/logout`;
-      await axios.post(url);
+      await axios.post(url, null, {
+        headers: {
+          Authorization: `Bearer ${JWT_TOKEN}`,
+        },
+      });
       localStorage.removeItem("token");
       navigate("/");
       window.location.reload();

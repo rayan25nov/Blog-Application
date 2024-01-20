@@ -67,6 +67,20 @@
   text-align: center;
 }
 
+.forgotPassword {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.forgotPassword a {
+  color: #3bb19b;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .right {
   flex: 1;
   display: flex;

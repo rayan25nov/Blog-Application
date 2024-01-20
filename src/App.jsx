@@ -21,6 +21,8 @@ import Profile from "./Routes/Profile/Profile.jsx";
 import SpecificBlog from "./Routes/SpecificBlog/SpecificBlog.jsx";
 import UpdateBlog from "./Routes/UpdateBlog/UpdateBlog.jsx";
 import NewsLetter from "./Routes/NewsLetter/NewsLetter.jsx";
+import ForgotPassword from "./Auth/forgot-password/ForgotPassword.jsx";
+import ResetPassword from "./Auth/reset-password/ResetPassword.jsx";
 import Styles from "./App.module.css";
 
 const Wrapper = ({ children }) => {
@@ -84,6 +86,11 @@ const App = () => {
                 <Route
                   path="/users/:id/verify/:token"
                   element={<EmailVerify />}
+                />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route
+                  path="/users/:id/reset-password/:token"
+                  element={<ResetPassword />}
                 />
               </>
             )}
