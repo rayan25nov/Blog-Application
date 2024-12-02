@@ -22,11 +22,12 @@ const Navbar = () => {
   const toggleTheme = () => {
     dispatch(toggleDarkMode());
   };
+
   const location = useLocation();
+  const JWT_TOKEN = localStorage.getItem("token");
 
   const handleLogout = async () => {
     try {
-      const JWT_TOKEN = localStorage.getItem("token");
       if (!JWT_TOKEN) {
         return;
       }
@@ -77,16 +78,32 @@ const Navbar = () => {
         >
           About
         </Link>
-        <Link
-          to={"/newsletter"}
-          className={location.pathname === "/newsletter" ? Styles.active : ""}
-          onClick={toggleMenu}
-        >
-          NewsLetter
-        </Link>
-        <button className={Styles.logoutBtn} onClick={handleLogout}>
-          Logout
-        </button>
+        {JWT_TOKEN && (
+          <>
+            <Link
+              to={"/newsletter"}
+              className={
+                location.pathname === "/newsletter" ? Styles.active : ""
+              }
+              onClick={toggleMenu}
+            >
+              NewsLetter
+            </Link>
+
+            <button className={Styles.logoutBtn} onClick={handleLogout}>
+              Logout
+            </button>
+          </>
+        )}
+        {!JWT_TOKEN && (
+          <Link
+            to={"/login"}
+            className={location.pathname === "/login" ? Styles.active : ""}
+            onClick={toggleMenu}
+          >
+            Login
+          </Link>
+        )}
       </div>
       <div className={Styles.theme_switcher}>
         <button onClick={toggleTheme} className={Styles.theme_switcher_button}>

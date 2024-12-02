@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Like from "../../assets/images/like.png";
 import Dislike from "../../assets/images/dislike.png";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import { handleAuthCheck } from "../../utils/AuthCheck";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import styles from "./LikeButton.module.css";
@@ -10,7 +11,6 @@ import styles from "./LikeButton.module.css";
 const LikeButton = ({ postId }) => {
   const [likes, setLikes] = useState(0);
   const darkMode = useSelector(selectDarkMode);
-
   const JWT_TOKEN = localStorage.getItem("token");
   const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
   const getAllLikesUrl = `${apiUrl}/posts/likes/${postId}`;
@@ -38,6 +38,7 @@ const LikeButton = ({ postId }) => {
   }, [postId]);
 
   const handleLike = async () => {
+    if (!handleAuthCheck(JWT_TOKEN)) return;
     try {
       await axios.put(likeUrl, null, {
         headers: {
@@ -59,6 +60,7 @@ const LikeButton = ({ postId }) => {
   };
 
   const handleUnlike = async () => {
+    if (!handleAuthCheck(JWT_TOKEN)) return;
     try {
       await axios.put(unlikeUrl, null, {
         headers: {
@@ -92,7 +94,6 @@ const LikeButton = ({ postId }) => {
       <button onClick={handleUnlike} className={styles.button}>
         <img src={Dislike} alt="Md Tanvirul Haque" />
       </button>
-      <ToastContainer />
     </div>
   );
 };

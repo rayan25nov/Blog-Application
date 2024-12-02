@@ -6,6 +6,7 @@ import styles from "./Blog.module.css";
 import { Link } from "react-router-dom";
 import Loader from "../../loader/Loader";
 import axios from "axios";
+import { handleAuthCheck } from "../../utils/AuthCheck.js";
 
 // ... (imports and other code)
 
@@ -16,12 +17,12 @@ const Blog = (props) => {
   const [totalPages, setTotalPages] = useState(1);
   const [postsPerPage] = useState(10);
   const [loading, setLoading] = useState(true); // Add loading state
+  const JWT_TOKEN = localStorage.getItem("token");
 
   const fetchData = async () => {
     try {
       const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
       const url = `${apiUrl}/posts?page=${currentPage}&pageSize=${postsPerPage}`;
-      const JWT_TOKEN = localStorage.getItem("token");
       const { data: res } = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${JWT_TOKEN}`,
@@ -67,18 +68,26 @@ const Blog = (props) => {
             <hr />
             <div className={styles.hero_section}>
               <h1 className={styles.heading}>THE BLOG</h1>
-              <Link to={"/profile"}>
-                <img
-                  src={props.user.image}
-                  alt="Hero icon"
-                  className={styles.hero}
-                />
-              </Link>
+              {props.user && (
+                <Link to={"/profile"}>
+                  <img
+                    src={props.user?.image}
+                    alt="Hero icon"
+                    className={styles.hero}
+                  />
+                </Link>
+              )}
             </div>
             <hr />
 
             <div className={styles.link_container}>
-              <Link to="/create-post" className={styles.link}>
+              <Link
+                onClick={(e) => {
+                  if (!handleAuthCheck(JWT_TOKEN)) e.preventDefault();
+                }}
+                to="/create-post"
+                className={styles.link}
+              >
                 Create Blog
               </Link>
             </div>
@@ -119,3 +128,5 @@ const Blog = (props) => {
 };
 
 export default Blog;
+
+// right now i'm showing login sigin page as landing page but i want to change that to landing page Blog so that user can see all blogs but just as they try to create blog or try to comment or like on a post tell them to sigin or signup because many people don't want to give their credentials first:

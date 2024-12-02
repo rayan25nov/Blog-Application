@@ -4,7 +4,8 @@ import styles from "./Comments.module.css";
 import deleteImage from "../../assets/images/delete.png";
 import { useSelector } from "react-redux";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import { handleAuthCheck } from "../../utils/AuthCheck";
 
 const Comments = ({ postId }) => {
   const darkMode = useSelector(selectDarkMode);
@@ -19,6 +20,7 @@ const Comments = ({ postId }) => {
   const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
   // Function to Post Comment on a Specific Blog
   const postComment = async () => {
+    if (!handleAuthCheck(JWT_TOKEN)) return;
     console.log("clicked");
     const url = `${apiUrl}/posts/comment/${postId}`;
     // Make the PUT request to the API
@@ -49,6 +51,7 @@ const Comments = ({ postId }) => {
 
   // Function to Delete a Specific Comment
   const deleteComment = async (commentId) => {
+    if (!handleAuthCheck(JWT_TOKEN)) return;
     const url = `${apiUrl}/posts/comment/${postId}/${commentId}`;
     try {
       // Make the DELETE request to the API
@@ -109,8 +112,6 @@ const Comments = ({ postId }) => {
           </div>
         </div>
       ))}
-      {/* Toast container for notifications */}
-      <ToastContainer />
     </div>
   );
 };
