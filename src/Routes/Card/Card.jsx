@@ -14,7 +14,8 @@ const truncate = (str) => {
 
 const BlogCard = (props) => {
   const darkMode = useSelector(selectDarkMode);
-  const { title, description, imageUrl, date, postId, github, vercel } = props;
+  const { title, description, imageUrl, date, postId, github, vercel } =
+    props;
   return (
     <div
       className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}

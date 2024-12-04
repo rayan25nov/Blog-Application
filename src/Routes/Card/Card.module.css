@@ -21,7 +21,8 @@
 }
 
 .blog {
-  width: 24rem;
+  min-width: 18rem;
+  max-width: 24rem;
   height: 90%;
   min-height: 30rem;
   border-radius: 5px;

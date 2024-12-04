@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useLayoutEffect } from "react";
-import { useSelector } from "react-redux";
-import { selectDarkMode } from "./Features/ToggleModeSlice";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,24 +6,27 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setBlog, selectBlog } from "./Features/BlogSlice";
 import axios from "axios";
-import Navbar from "./Navbar/Navbar.jsx";
-import Blog from "./Routes/Blog/Blog.jsx";
-import CreateBlog from "./Routes/CreateBlog/CreateBlog.jsx";
-import Project from "./Routes/Projects/Project.jsx";
-import About from "./Routes/About/About.jsx";
-import Login from "./Auth/login/Login.jsx";
-import Signup from "./Auth/signup/Signup.jsx";
-import EmailVerify from "./Auth/emailverify/EmailVerify.jsx";
-import Profile from "./Routes/Profile/Profile.jsx";
-import SpecificBlog from "./Routes/SpecificBlog/SpecificBlog.jsx";
-import UpdateBlog from "./Routes/UpdateBlog/UpdateBlog.jsx";
-import NewsLetter from "./Routes/NewsLetter/NewsLetter.jsx";
-import ForgotPassword from "./Auth/forgot-password/ForgotPassword.jsx";
-import ResetPassword from "./Auth/reset-password/ResetPassword.jsx";
+import Navbar from "./Navbar/Navbar";
+import Blog from "./Routes/Blog/Blog";
+import CreateBlog from "./Routes/CreateBlog/CreateBlog";
+import Project from "./Routes/Projects/Project";
+import About from "./Routes/About/About";
+import Login from "./Auth/login/Login";
+import Signup from "./Auth/signup/Signup";
+import EmailVerify from "./Auth/emailverify/EmailVerify";
+import Profile from "./Routes/Profile/Profile";
+import SpecificBlog from "./Routes/SpecificBlog/SpecificBlog";
+import UpdateBlog from "./Routes/UpdateBlog/UpdateBlog";
+import NewsLetter from "./Routes/NewsLetter/NewsLetter";
+import ForgotPassword from "./Auth/forgot-password/ForgotPassword";
+import ResetPassword from "./Auth/reset-password/ResetPassword";
 import Styles from "./App.module.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { selectDarkMode } from "./Features/ToggleModeSlice";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -39,15 +40,15 @@ const App = () => {
   const darkMode = useSelector(selectDarkMode);
   const JWT_TOKEN = localStorage.getItem("token");
   const [user, setUser] = useState(null);
+  const dispatch = useDispatch();
+  const blogs = useSelector(selectBlog); // Access blogs from Redux state
+  const [shouldFetchBlogs, setShouldFetchBlogs] = useState(true); // Track if blogs need to be fetched
 
-  const fetchData = async () => {
+  const fetchUserData = async () => {
     const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-    const url = `${apiUrl}/users/profile`;
     try {
-      const { data: res } = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${JWT_TOKEN}`,
-        },
+      const { data: res } = await axios.get(`${apiUrl}/users/profile`, {
+        headers: { Authorization: `Bearer ${JWT_TOKEN}` },
       });
       setUser(res.user);
     } catch (error) {
@@ -55,11 +56,24 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
-    if (JWT_TOKEN) {
-      fetchData();
+  const fetchAllBlogs = async () => {
+    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+    try {
+      const { data: res } = await axios.get(`${apiUrl}/posts`);
+      if (JSON.stringify(blogs) !== JSON.stringify(res.posts)) {
+        // Update blogs only if they have changed
+        dispatch(setBlog(res.posts));
+        setShouldFetchBlogs(false); // Mark fetch as done
+      }
+    } catch (error) {
+      console.error("Error fetching blog data:", error);
     }
-  }, [JWT_TOKEN]);
+  };
+
+  useEffect(() => {
+    if (JWT_TOKEN) fetchUserData();
+    if (shouldFetchBlogs) fetchAllBlogs(); // Fetch blogs only if needed
+  }, [JWT_TOKEN, shouldFetchBlogs]);
 
   return (
     <Router>
@@ -72,7 +86,7 @@ const App = () => {
         <Wrapper>
           <Routes>
             {/* Public Routes */}
-            <Route path="/" element={<Blog user={user} />} />
+            <Route path="/" element={<Blog />} />
             <Route path="/projects" element={<Project />} />
             <Route path="/about" element={<About />} />
             <Route path="/specific-blog/:postId" element={<SpecificBlog />} />
@@ -105,108 +119,3 @@ const App = () => {
 };
 
 export default App;
-
-// import React, { useEffect, useState, useLayoutEffect } from "react";
-// import { useSelector } from "react-redux";
-// import { selectDarkMode } from "./Features/ToggleModeSlice";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   Navigate,
-//   useLocation,
-// } from "react-router-dom";
-// import axios from "axios";
-// import Navbar from "./Navbar/Navbar.jsx";
-// import Blog from "./Routes/Blog/Blog.jsx";
-// import CreateBlog from "./Routes/CreateBlog/CreateBlog.jsx";
-// import Project from "./Routes/Projects/Project.jsx";
-// import About from "./Routes/About/About.jsx";
-// import Login from "./Auth/login/Login.jsx";
-// import Signup from "./Auth/signup/Signup.jsx";
-// import EmailVerify from "./Auth/emailverify/EmailVerify.jsx";
-// import Profile from "./Routes/Profile/Profile.jsx";
-// import SpecificBlog from "./Routes/SpecificBlog/SpecificBlog.jsx";
-// import UpdateBlog from "./Routes/UpdateBlog/UpdateBlog.jsx";
-// import NewsLetter from "./Routes/NewsLetter/NewsLetter.jsx";
-// import ForgotPassword from "./Auth/forgot-password/ForgotPassword.jsx";
-// import ResetPassword from "./Auth/reset-password/ResetPassword.jsx";
-// import Styles from "./App.module.css";
-
-// const Wrapper = ({ children }) => {
-//   const location = useLocation();
-//   useLayoutEffect(() => {
-//     document.documentElement.scrollTo(0, 0);
-//   }, [location.pathname]);
-//   return children;
-// };
-
-// const App = () => {
-//   const darkMode = useSelector(selectDarkMode);
-//   const JWT_TOKEN = localStorage.getItem("token");
-//   const [user, setUser] = useState({});
-//   const fetchData = async () => {
-//     const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-//     const url = `${apiUrl}/users/profile`;
-//     // Make the GET request to the API
-//     const { data: res } = await axios.get(url, {
-//       headers: {
-//         Authorization: `Bearer ${JWT_TOKEN}`,
-//       },
-//     });
-//     setUser(res.user);
-//     // console.log(res.user.image);
-//   };
-//   JWT_TOKEN &&
-//     useEffect(() => {
-//       fetchData();
-//     }, []);
-
-//   return (
-//     <Router>
-//       <div
-//         className={`${Styles.container} ${
-//           darkMode ? Styles.dark : Styles.light
-//         }`}
-//       >
-//         {JWT_TOKEN && <Navbar />}
-//         <Wrapper>
-//           <Routes>
-//             {JWT_TOKEN ? (
-//               <>
-//                 <Route path="/" element={<Blog user={user} />} />
-//                 <Route path="/projects" element={<Project />} />
-//                 <Route path="/about" element={<About />} />
-//                 <Route path="/create-post" element={<CreateBlog />} />
-//                 <Route path="/profile" element={<Profile user={user} />} />
-//                 <Route
-//                   path="/specific-blog/:postId"
-//                   element={<SpecificBlog />}
-//                 />
-//                 <Route path="/update-post/:postId" element={<UpdateBlog />} />
-//                 <Route path="/newsletter" element={<NewsLetter />} />
-//               </>
-//             ) : (
-//               <>
-//                 <Route path="/signup" exact element={<Signup />} />
-//                 <Route path="/login" exact element={<Login />} />
-//                 <Route path="/" element={<Navigate replace to="/login" />} />
-//                 <Route
-//                   path="/users/:id/verify/:token"
-//                   element={<EmailVerify />}
-//                 />
-//                 <Route path="/forgot-password" element={<ForgotPassword />} />
-//                 <Route
-//                   path="/users/:id/reset-password/:token"
-//                   element={<ResetPassword />}
-//                 />
-//               </>
-//             )}
-//           </Routes>
-//         </Wrapper>
-//       </div>
-//     </Router>
-//   );
-// };
-
-// export default App;
