@@ -8,6 +8,7 @@ import Comments from "../Comments/Comments";
 import LikeButton from "../Likes/LikeButton";
 import styles from "./SpecificBlog.module.css";
 import { handleAuthCheck, AuthUser } from "../../utils/AuthCheck";
+import axios from "axios";
 
 const SpecificBlog = () => {
   const darkMode = useSelector(selectDarkMode);
@@ -15,20 +16,20 @@ const SpecificBlog = () => {
   const { postId } = useParams();
   const navigate = useNavigate();
   const JWT_TOKEN = localStorage.getItem("token");
+  const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
   // Ensure posts are available before trying to find the blog
   if (!posts) {
     return <div>Loading...</div>; // Show a loading message while posts are being fetched
   }
 
-  const blog = posts.find((post) => post._id === postId);
+  const blog = posts?.find((post) => post._id === postId);
 
   const deletePost = async () => {
     if (!handleAuthCheck(JWT_TOKEN)) return;
     if (!AuthUser(blog)) return;
 
     try {
-      const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
       const url = `${apiUrl}/posts/${postId}`;
       await axios.delete(url, {
         headers: {
@@ -39,6 +40,7 @@ const SpecificBlog = () => {
         position: "top-right",
         autoClose: 3000,
       });
+
       navigate("/");
     } catch (error) {
       toast.error(
@@ -51,6 +53,23 @@ const SpecificBlog = () => {
       );
       console.error("Error deleting post:", error);
     }
+  };
+
+  const handleUpdateClick = async (e) => {
+    if (!handleAuthCheck(JWT_TOKEN)) return;
+    // Check authorization
+    const isAuthorized = await AuthUser(postId, apiUrl);
+
+    if (!isAuthorized) {
+      toast.error("You are not authorized to perform this action.", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      return; // Don't navigate if not authorized
+    }
+
+    // Proceed with navigation if authorized
+    navigate(`/update-post/${postId}`);
   };
 
   // If the blog is not found, navigate to home or show an error
@@ -78,17 +97,9 @@ const SpecificBlog = () => {
       <p className={styles.description}>{blog.description}</p>
 
       <div className={styles.buttons}>
-        <Link
-          className={styles.link}
-          to={`/update-post/${postId}`}
-          onClick={(e) => {
-            if (!handleAuthCheck(JWT_TOKEN) || !AuthUser(blog)) {
-              e.preventDefault();
-            }
-          }}
-        >
+        <div className={styles.link} onClick={handleUpdateClick}>
           Update Post
-        </Link>
+        </div>
         <button className={styles.btn} onClick={deletePost}>
           Delete Post
         </button>

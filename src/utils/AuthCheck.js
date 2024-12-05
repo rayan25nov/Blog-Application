@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import axios from "axios";
 
 // Check if the user is authenticated
 const handleAuthCheck = (JWT_TOKEN) => {
@@ -12,17 +13,31 @@ const handleAuthCheck = (JWT_TOKEN) => {
   return true;
 };
 
-// Check if the authenticated user is authorized to perform the action
-const AuthUser = (blog) => {
-  console.log( blog);
-  if (loggedInUserId !== blog.userId._id) {
-    toast.error("You are not authorized to perform this action.", {
-      position: "top-right",
-      autoClose: 3000,
-    });
-    return false;
+const AuthUser = async (postId, apiUrl) => {
+  // Retrieve the JWT token from localStorage
+  const JWT_TOKEN = localStorage.getItem("token");
+  if (!JWT_TOKEN) {
+    throw new Error("No JWT token found");
   }
-  return true;
+  const url = `${apiUrl}/posts/user/postId`;
+  try {
+    // Pass the token in the Authorization header
+    const { data: res } = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${JWT_TOKEN}`,
+      },
+    });
+    // Check if the postId exists in the user's authorized posts
+    const postIds = res.postIds || [];
+    console.log(postId);
+    console.log(postIds);
+    // Ensure both are strings for comparison
+    const isAuthorized = postIds.includes(postId.toString());
+    return isAuthorized;
+  } catch (error) {
+    console.error("Authorization failed:", error);
+    return false; // Not authorized
+  }
 };
 
 export { handleAuthCheck, AuthUser };

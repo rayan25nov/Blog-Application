@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { selectDarkMode } from "../../Features/ToggleModeSlice";
+import { selectDarkMode } from "../../../Features/ToggleModeSlice";
 import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

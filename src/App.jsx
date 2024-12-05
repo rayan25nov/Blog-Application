@@ -19,7 +19,7 @@ import Signup from "./Auth/signup/Signup";
 import EmailVerify from "./Auth/emailverify/EmailVerify";
 import Profile from "./Routes/Profile/Profile";
 import SpecificBlog from "./Routes/SpecificBlog/SpecificBlog";
-import UpdateBlog from "./Routes/UpdateBlog/UpdateBlog";
+import UpdateBlog from "./Routes/SpecificBlog/UpdateBlog/UpdateBlog";
 import NewsLetter from "./Routes/NewsLetter/NewsLetter";
 import ForgotPassword from "./Auth/forgot-password/ForgotPassword";
 import ResetPassword from "./Auth/reset-password/ResetPassword";

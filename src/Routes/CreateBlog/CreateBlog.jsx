@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import { useSelector } from "react-redux";
-import styles from "../UpdateBlog/UpdateBlog.module.css";
+import styles from "../SpecificBlog/UpdateBlog/UpdateBlog.module.css";
 
 const CreateBlog = () => {
   const darkMode = useSelector(selectDarkMode);
