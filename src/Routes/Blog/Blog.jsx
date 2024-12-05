@@ -78,7 +78,9 @@ const Blog = (props) => {
       <p className={styles.para}>All blog posts</p>
 
       {loading ? (
-        <Loader /> // Display loader while data is being fetched
+        <div className={styles.blogs_container}>
+          <Loader />
+        </div>
       ) : (
         <>
           <div className={styles.blogs_container}>
