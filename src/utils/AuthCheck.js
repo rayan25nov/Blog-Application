@@ -29,8 +29,6 @@ const AuthUser = async (postId, apiUrl) => {
     });
     // Check if the postId exists in the user's authorized posts
     const postIds = res.postIds || [];
-    console.log(postId);
-    console.log(postIds);
     // Ensure both are strings for comparison
     const isAuthorized = postIds.includes(postId.toString());
     return isAuthorized;

@@ -1,17 +1,15 @@
-// userSlice.js
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const blogSlice = createSlice({
   name: "blog",
-  initialState: { blog: null },
+  initialState: [],
   reducers: {
-    setBlog: (state, action) => {
-      state.blog = action.payload;
-    },
+    setBlogs: (state, action) => action.payload,
+    deleteBlog: (state, action) =>
+      state.filter((post) => post._id !== action.payload),
   },
 });
 
-export const { setBlog } = blogSlice.actions;
-export const selectBlog = (state) => state.blog.blog;
+export const { setBlogs, deleteBlog } = blogSlice.actions;
+export const selectBlog = (state) => state.blog;
 export default blogSlice.reducer;

@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setBlog, selectBlog } from "./Features/BlogSlice";
+import { setBlogs, selectBlog } from "./Features/BlogSlice";
 import axios from "axios";
 import Navbar from "./Navbar/Navbar";
 import Blog from "./Routes/Blog/Blog";
@@ -62,7 +62,7 @@ const App = () => {
       const { data: res } = await axios.get(`${apiUrl}/posts`);
       if (JSON.stringify(blogs) !== JSON.stringify(res.posts)) {
         // Update blogs only if they have changed
-        dispatch(setBlog(res.posts));
+        dispatch(setBlogs(res.posts));
         setShouldFetchBlogs(false); // Mark fetch as done
       }
     } catch (error) {
@@ -72,7 +72,7 @@ const App = () => {
 
   useEffect(() => {
     if (JWT_TOKEN) fetchUserData();
-    if (shouldFetchBlogs) fetchAllBlogs(); // Fetch blogs only if needed
+    if (shouldFetchBlogs) fetchAllBlogs();
   }, [JWT_TOKEN, shouldFetchBlogs]);
 
   return (

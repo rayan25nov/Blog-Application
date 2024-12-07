@@ -4,9 +4,10 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "../SpecificBlog/UpdateBlog/UpdateBlog.module.css";
 import Loader from "../../loader/Loader"; // Assuming you have a Loader component
+import { setBlogs, selectBlog } from "../../Features/BlogSlice.js";
 
 const CreateBlog = () => {
   const darkMode = useSelector(selectDarkMode);
@@ -16,6 +17,8 @@ const CreateBlog = () => {
   const [image, setImage] = useState(null);
   const [readImg, setReadImg] = useState(null);
   const navigate = useNavigate();
+  const blogs = useSelector(selectBlog);
+  const dispatch = useDispatch();
 
   // Function to handle the form submission
   const handleSubmit = async (e) => {
@@ -61,6 +64,8 @@ const CreateBlog = () => {
         pauseOnHover: true,
         draggable: true,
       });
+      // Dispatch directly after creating the blog
+      dispatch(setBlogs([res.newPost, ...blogs]));
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -168,161 +173,3 @@ const CreateBlog = () => {
 };
 
 export default CreateBlog;
-
-// import React, { useState } from "react";
-// import axios from "axios";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-// import { selectDarkMode } from "../../Features/ToggleModeSlice";
-// import { useSelector } from "react-redux";
-// import styles from "../SpecificBlog/UpdateBlog/UpdateBlog.module.css";
-// import Loader from "../../loader/Loader";
-
-// const CreateBlog = () => {
-//   const darkMode = useSelector(selectDarkMode);
-//   // State hooks for the post title, description, and image
-//   const [title, setTitle] = useState("");
-//   const [description, setDescription] = useState("");
-//   const [loading, setLoading] = useState(true);
-//   const [image, setImage] = useState(null);
-//   const [readImg, setReadImg] = useState(null);
-
-//   // Function to handle the form submission
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       // Form Data
-//       const formData = new FormData();
-//       formData.append("title", title);
-//       formData.append("description", description);
-//       formData.append("image", image);
-//       // Generate the current date in the desired format
-//       const createdAt = new Date().toLocaleString("en-IN", {
-//         timeZone: "Asia/Kolkata",
-//         year: "numeric",
-//         month: "short",
-//         day: "2-digit",
-//       });
-
-//       // Append the createdAt field to the form data
-//       formData.append("createdAt", createdAt);
-//       // API URL
-//       const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-//       const url = `${apiUrl}/posts/create`;
-//       const JWT_TOKEN = localStorage.getItem("token");
-
-//       // Make the POST request to the API
-//       const { data: res } = await axios.post(url, formData, {
-//         headers: {
-//           Authorization: `Bearer ${JWT_TOKEN}`,
-//         },
-//       });
-//       // console.log(res);
-//       // Reset the form
-//       setTitle("");
-//       setDescription("");
-//       setImage(null);
-//       setReadImg(null);
-
-//       // Display success notification
-//       toast.success("Post created successfully", {
-//         position: "top-right",
-//         autoClose: 3000,
-//         hideProgressBar: false,
-//         closeOnClick: true,
-//         pauseOnHover: true,
-//         draggable: true,
-//       });
-//     } catch (error) {
-//       console.log(error);
-//       // Display error notification
-//       toast.error("Error creating post", {
-//         position: "top-right",
-//         autoClose: 3000,
-//         hideProgressBar: false,
-//         closeOnClick: true,
-//         pauseOnHover: true,
-//         draggable: true,
-//       });
-//       // Reset the form
-//       setTitle("");
-//       setDescription("");
-//       setImage(null);
-//       setReadImg(null);
-//     }
-//   };
-
-//   // Function to handle the image upload
-//   const handleImageUpload = (e) => {
-//     const file = e.target.files[0];
-//     if (!file.type.startsWith("image/")) {
-//       alert("Please upload an image file");
-//       return;
-//     }
-//     const reader = new FileReader();
-//     reader.onload = () => {
-//       setReadImg(reader.result);
-//     };
-//     reader.readAsDataURL(file);
-//     setImage(file);
-//   };
-
-//   return (
-//     <div
-//       className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
-//     >
-//       <h1 className={styles.heading}>Create Blog</h1>
-//       <form className={styles.form} onSubmit={handleSubmit}>
-//         <div className={styles.formGroup}>
-//           <label htmlFor="title">Title</label>
-//           <input
-//             type="text"
-//             id="title"
-//             value={title}
-//             required
-//             onChange={(e) => setTitle(e.target.value)}
-//           />
-//         </div>
-//         <div className={styles.formGroup}>
-//           <label htmlFor="description">description</label>
-//           <textarea
-//             id="description"
-//             value={description}
-//             required
-//             onChange={(e) => setDescription(e.target.value)}
-//           />
-//         </div>
-//         <div className={styles.formGroup}>
-//           <label htmlFor="image">Image</label>
-//           <div>
-//             {readImg ? (
-//               <img
-//                 src={readImg}
-//                 alt="Uploaded image"
-//                 className={styles.image}
-//               />
-//             ) : (
-//               <p className={styles.text}>No image uploaded</p>
-//             )}
-//           </div>
-//           <input
-//             type="file"
-//             id="image"
-//             required
-//             accept="image/*"
-//             onChange={handleImageUpload}
-//           />
-//         </div>
-//         <div className={styles.formGroup}>
-//           <button type="submit" className={styles.submitButton}>
-//             Submit
-//           </button>
-//         </div>
-//       </form>
-//       {/* Toast container for notifications */}
-//       <ToastContainer />
-//     </div>
-//   );
-// };
-
-// export default CreateBlog;
