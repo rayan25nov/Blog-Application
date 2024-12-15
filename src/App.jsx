@@ -86,7 +86,7 @@ const App = () => {
         <Wrapper>
           <Routes>
             {/* Public Routes */}
-            <Route path="/" element={<Blog />} />
+            <Route path="/" element={<Blog user={user} />} />
             <Route path="/projects" element={<Project />} />
             <Route path="/about" element={<About />} />
             <Route path="/specific-blog/:postId" element={<SpecificBlog />} />
