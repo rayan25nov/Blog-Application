@@ -38,7 +38,7 @@ A responsive blog frontend project built using **React**, **Vite**, and **Modula
 - Notifications: React Toastify
 - Development: Vite for fast builds and hot module replacement
 
-## 📦 Installation
+## ⚙️ Installation
 
 - Prerequisites
 - Ensure you have the following installed:
@@ -201,7 +201,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the ISC License.
 
 ## ✨ Acknowledgements
 
