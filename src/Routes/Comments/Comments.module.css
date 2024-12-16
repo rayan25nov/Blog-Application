@@ -56,7 +56,11 @@
   background-color: #007bff;
   color: #fff;
   padding: 1.05rem 2rem;
-  border: none;
+  /* border: ; */
+  border-top:  1px solid var(--border-color);
+  border-bottom:  1px solid var(--border-color);
+  border-right:  1px solid var(--border-color);
+  border-left: none;
   border-radius: 0 0.5rem 0.5rem 0;
   cursor: pointer;
 }
@@ -108,7 +112,7 @@
   }
 
   .create_comment button {
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 1rem;
   }
   .comment_container {
     flex-direction: column-reverse;
