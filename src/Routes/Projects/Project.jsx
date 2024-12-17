@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { selectDarkMode } from "../../Features/ToggleModeSlice";
 import styles from "./Project.module.css";
 import projects from "./ProjectData.json";
+import Carousel from "./Carousel";
 
 const Project = () => {
   const darkMode = useSelector(selectDarkMode);
@@ -16,7 +17,8 @@ const Project = () => {
       <h1 className={styles.heading}>PROJECTS</h1>
       <hr />
       <p className={styles.text}>List Project</p>
-      <div className={styles.card_container}>
+      <Carousel />
+      {/* <div className={styles.card_container}>
         {projects.map((project) => (
           <div key={project.id}>
             <Card
@@ -28,7 +30,7 @@ const Project = () => {
             />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -6,7 +6,7 @@ A responsive blog frontend project built using **React**, **Vite**, and **Modula
 
 - [Features](#-features)
 - [Tech Stack](#️-tech-stack)
-- [Installation](#-installation)
+- [Installation](#️-installation)
 - [Environment Variables](#-environment-variables)
 - [Scripts](#-scripts)
 - [Folder Structure](#-folder-structure)
@@ -40,17 +40,37 @@ A responsive blog frontend project built using **React**, **Vite**, and **Modula
 
 ## ⚙️ Installation
 
-- Prerequisites
-- Ensure you have the following installed:
-  - Node.js (v16+)
-  - npm or yarn
-- Steps
-  - Clone the repository: git clone https://github.com/rayan25nov/Blog-Application.git
-  - Navigate to the project directory: cd blog-frontend
-  - Install dependencies: npm install
-- Start the development server:
-  - npm start
-  - npm run dev
+#### Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js (v16+)
+- npm or yarn
+
+#### Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/rayan25nov/Blog-Application.git
+   ```
+2. Navigate to the project directory: cd blog-frontend
+   ```bash
+   cd blog-frontend
+   ```
+3. Install dependencies
+   ```bash
+   npm install
+   ```
+
+#### Start the development server:
+
+```bash
+  npm start
+```
+
+```bash
+  npm run dev
+```
 
 ## 📄 Environment Variables
 
@@ -95,13 +115,16 @@ The project follows a modular and scalable structure for maintainability and eas
                 └── github.png
                 └── like.png
                 └── linkedin.png
+                └── meeting.png
                 └── moon.png
+                └── mountain.jpg
                 └── profile_2.jpg
                 └── profile_3.jpg
                 └── profile.jpg
                 └── reset-password.jpg
                 └── sun.png
                 └── verified.png
+                └── wireframe.png
         └── 📁Auth
             └── 📁emailverify
                 └── EmailVerify.jsx
@@ -187,13 +210,27 @@ The project follows a modular and scalable structure for maintainability and eas
 
 ## 🖼️ Screenshots
 
-- Blog Section
+#### Blog Section
 
-- Projects
+![Landing page before login](<./src/assets/readme/Screenshot (222).png>)
+![login page](<./src/assets/readme/Screenshot (223).png>)
+![signup page](<./src/assets/readme/Screenshot (224).png>)
+![forgot password](<./src/assets/readme/Screenshot (225).png>)
+![Landing page after login](<./src/assets/readme/Screenshot (226).png>)
+![User Profile Page](<./src/assets/readme/Screenshot (227).png>)
+![Dark Mode](<./src/assets/readme/Screenshot (231).png>)
+![create Blog](<./src/assets/readme/Screenshot (232).png>)
+![Specific Blog](<./src/assets/readme/Screenshot (233).png>)
 
-- About
+#### Projects Section
 
-- Newsletter
+#### About Section
+
+![About Page](<./src/assets/readme/Screenshot (228).png>)
+
+#### Newsletter Section
+
+![alt text](<./src/assets/readme/Screenshot (230).png>)
 
 ## 🤝 Contributing
 

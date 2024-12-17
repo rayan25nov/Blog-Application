@@ -1,0 +1,60 @@
+.carousel_container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper_slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.project_card {
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* width: 280px; */
+  /* height: 350px; */
+  transition: transform 0.3s ease;
+}
+
+.project_card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project_card .project_info {
+  padding: 10px;
+}
+
+.project_card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.project_card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.project_card a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 12px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.project_card a:hover {
+  background: #0056b3;
+}
+
+/* Highlight the active slide */
+.swiper-slide-active .project_card {
+  transform: scale(1.2); /* Make the active slide bigger */
+}
