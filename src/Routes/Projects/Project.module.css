@@ -17,13 +17,43 @@
   padding-bottom: 2.5rem;
   width: 80%;
 }
+/* Card container styles */
 .card_container {
-  height: max-content;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 1.5rem;
+  gap: 16px;
+  justify-content: center;
 }
+
+/* Card styles */
+.card {
+  flex: 1 1 calc(50% - 16px);
+  max-width: calc(50% - 16px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* Show 1 project on small screens */
+    max-width: 100%;
+  }
+}
+
 hr {
   margin: 0.625rem;
   height: 0.0625rem;

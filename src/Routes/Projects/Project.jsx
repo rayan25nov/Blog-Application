@@ -1,11 +1,8 @@
 import React from "react";
-// import ProjectCard from "./ProjectCard";
-import Card from "../Card/Card";
 import { useSelector } from "react-redux";
-import { selectDarkMode } from "../../Features/ToggleModeSlice";
+import { selectDarkMode } from "d:/Coding/Blog/blog-frontend/src/Features/ToggleModeSlice";
 import styles from "./Project.module.css";
-import projects from "./ProjectData.json";
-import Carousel from "./Carousel";
+import projects from "d:/Coding/Blog/blog-frontend/src/Routes/Projects/ProjectData.json";
 
 const Project = () => {
   const darkMode = useSelector(selectDarkMode);
@@ -17,20 +14,13 @@ const Project = () => {
       <h1 className={styles.heading}>PROJECTS</h1>
       <hr />
       <p className={styles.text}>List Project</p>
-      <Carousel />
-      {/* <div className={styles.card_container}>
+      <div className={styles.card_container}>
         {projects.map((project) => (
-          <div key={project.id}>
-            <Card
-              imageUrl={project.image}
-              title={project.title}
-              description={project.description}
-              github={project.github}
-              vercel={project.vercel}
-            />
+          <div key={project.id} className={styles.card}>
+            <img src={project.brand} alt="Project Brand" />
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };

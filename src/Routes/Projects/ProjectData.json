@@ -7,37 +7,99 @@
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844477/projects/weather_app_mmz6ah.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630460/projects/WApp_zfjiek.png",
     "github": "https://github.com/rayan25nov/Weather-Application",
-    "vercel": "https://weather-application-vert-alpha.vercel.app/"
+    "vercel": "https://weather-application-vert-alpha.vercel.app/",
+    "features": [
+      "Check the current weather of any city worldwide",
+      "Toggle between light and dark modes",
+      "Fetch weather data based on your location or a searched city"
+    ],
+    "techStack": [
+      "React - Frontend",
+      "CSS - Styling",
+      "OpenWeather API - Data fetching"
+    ],
+    "learnings": [
+      "Integrating third-party APIs",
+      "Creating responsive UI components",
+      "Managing state efficiently"
+    ]
   },
   {
     "id": "2",
     "title": "Url Shortener",
-    "description": "URL-Shortener is a web application that allows you to transform long and cumbersome URLs into short and easy ones. You can enter any valid URL and get a shortened version using nanoid. URL-Shortener is built using node.js, express.js, mongoDb, and static files like html, css, javascript. It also has a light/dark mode feature that you can toggle.",
+    "description": "URL-Shortener is a web application that allows you to transform long and cumbersome URLs into short and easy ones. You can enter any valid URL and get a shortened version using nanoid. URL-Shortener is built using Node.js, Express.js, MongoDB, and static files like HTML, CSS, and JavaScript. It also has a light/dark mode feature that you can toggle.",
     "shortDescription": "Shorten long URLs easily with this Node.js and MongoDB-powered app.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844480/projects/url_shortener_app_zhe2q3.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630460/projects/UrlShortener_wfkh1w.png",
     "github": "https://github.com/rayan25nov/Url-Shortener",
-    "vercel": "https://url-shortener-ten-sigma.vercel.app/"
+    "vercel": "https://url-shortener-ten-sigma.vercel.app/",
+    "features": [
+      "Shorten long URLs into manageable links",
+      "Toggle between light and dark modes",
+      "Nanoid for unique URL generation"
+    ],
+    "techStack": [
+      "Node.js - Backend",
+      "MongoDB - Database",
+      "Express.js - Framework",
+      "HTML/CSS/JS - Static content"
+    ],
+    "learnings": [
+      "Building REST APIs",
+      "Integrating MongoDB for persistent storage",
+      "Implementing light/dark mode toggle"
+    ]
   },
   {
     "id": "3",
     "title": "Expanding Cards",
-    "description": "Expanding-Cards is a web application that showcases a collection of beautiful images in a responsive grid layout. You can click on any image to expand it and see more details. Expanding-Cards is built using html, css and javascript.",
+    "description": "Expanding-Cards is a web application that showcases a collection of beautiful images in a responsive grid layout. You can click on any image to expand it and see more details. Expanding-Cards is built using HTML, CSS, and JavaScript.",
     "shortDescription": "A responsive image gallery with expandable cards for a dynamic user experience.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844475/projects/expanding_cards_soq2rw.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630459/projects/Expanding_Cards_c7kaqs.png",
     "github": "https://github.com/rayan25nov/Expanding-Cards",
-    "vercel": "https://expanding-cards-azure.vercel.app/"
+    "vercel": "https://expanding-cards-azure.vercel.app/",
+    "features": [
+      "Dynamic expandable cards",
+      "Responsive layout for different screen sizes",
+      "Interactive user experience"
+    ],
+    "techStack": [
+      "HTML - Structure",
+      "CSS - Styling",
+      "JavaScript - Interactivity"
+    ],
+    "learnings": [
+      "Creating interactive UI components",
+      "Implementing responsive design",
+      "Working with grid layouts"
+    ]
   },
   {
     "id": "4",
     "title": "Movie Overview App",
-    "description": "Movie-Overview is a web application that lets you browse and discover movies from various genres and categories. You can see the ratings, summaries, and posters of each movie, powered by themoviedb API. Movie-Overview is built using html, css and javascript.",
+    "description": "Movie-Overview is a web application that lets you browse and discover movies from various genres and categories. You can see the ratings, summaries, and posters of each movie, powered by the TMDB API. Movie-Overview is built using HTML, CSS, and JavaScript.",
     "shortDescription": "Discover and explore movies with ratings and posters using the TMDB API.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844477/projects/movie_overview_qhkby9.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630459/projects/Moview_Overview_npihr2.png",
     "github": "https://github.com/rayan25nov/Movie-Overview-App",
-    "vercel": "https://movie-overview-app.vercel.app/"
+    "vercel": "https://movie-overview-app.vercel.app/",
+    "features": [
+      "Search for movies by genre or title",
+      "View movie ratings and summaries",
+      "Integrated with TMDB API for real-time data"
+    ],
+    "techStack": [
+      "HTML - Structure",
+      "CSS - Styling",
+      "JavaScript - Logic",
+      "TMDB API - Movie data"
+    ],
+    "learnings": [
+      "API integration for real-time data",
+      "Building dynamic search features",
+      "Creating user-friendly interfaces"
+    ]
   },
   {
     "id": "5",
@@ -47,7 +109,21 @@
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844477/projects/personal_portfolio_ysa99c.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630455/projects/Bootstrap_Portfolio_yrf5r0.png",
     "github": "https://github.com/rayan25nov/Portfolio",
-    "vercel": "https://portfolio-rayan25nov.vercel.app/"
+    "vercel": "https://portfolio-rayan25nov.vercel.app/",
+    "features": [
+      "Users can explore projects, skills, and experiences.",
+      "Light and dark mode support for better accessibility.",
+      "Fully responsive design for all screen sizes."
+    ],
+    "techStack": [
+      "React.js - Frontend",
+      "React-Bootstrap - UI Framework",
+      "Firebase - Hosting and Backend"
+    ],
+    "learnings": [
+      "Implementing responsive designs with Bootstrap.",
+      "Integrating Firebase for hosting and deployment."
+    ]
   },
   {
     "id": "6",
@@ -57,7 +133,21 @@
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844471/projects/calculator_rsfwde.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630455/projects/Calculator_y0wndf.png",
     "github": "https://github.com/rayan25nov/Calculator-App",
-    "vercel": "https://calculator-app-nu-red.vercel.app/"
+    "vercel": "https://calculator-app-nu-red.vercel.app/",
+    "features": [
+      "Perform basic arithmetic operations seamlessly.",
+      "Keyboard and button inputs supported.",
+      "Minimalist and elegant design for ease of use."
+    ],
+    "techStack": [
+      "React.js - Frontend",
+      "Material UI - UI Components",
+      "CSS - Styling"
+    ],
+    "learnings": [
+      "Enhancing UI/UX for interactive applications.",
+      "Implementing keyboard event handlers in React."
+    ]
   },
   {
     "id": "7",
@@ -67,7 +157,21 @@
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844472/projects/dictionary_zihuiv.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630454/projects/Dictionary_br3x3g.png",
     "github": "https://github.com/rayan25nov/Dictionary-App",
-    "vercel": "https://dictionary-app-jmku.vercel.app/"
+    "vercel": "https://dictionary-app-jmku.vercel.app/",
+    "features": [
+      "Search meanings, synonyms, and examples of words.",
+      "Supports multiple languages.",
+      "Dark and light mode for accessibility."
+    ],
+    "techStack": [
+      "React.js - Frontend",
+      "Material UI - UI Framework",
+      "CSS - Styling"
+    ],
+    "learnings": [
+      "Integrating external APIs effectively.",
+      "Managing state in React for dynamic content."
+    ]
   },
   {
     "id": "8",
@@ -77,7 +181,22 @@
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1703187234/projects/Restaurant_Management_Application_hxaksm.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630462/projects/Restaurant_Client_vqqitf.png",
     "github": "https://github.com/rayan25nov/restaurant-client",
-    "vercel": "https://restaurant-client-sigma.vercel.app/"
+    "vercel": "https://restaurant-client-sigma.vercel.app/",
+    "features": [
+      "Menu management with dynamic updates.",
+      "Order tracking and reporting functionalities.",
+      "Real-time inventory management."
+    ],
+    "techStack": [
+      "MongoDB - Database",
+      "Express.js - Backend Framework",
+      "React.js - Frontend",
+      "Node.js - Runtime Environment"
+    ],
+    "learnings": [
+      "Building scalable MERN applications.",
+      "Implementing real-time data synchronization using WebSockets."
+    ]
   },
   {
     "id": "9",
@@ -87,17 +206,43 @@
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631647/projects/Screenshot_2024-06-19_220158_saxbg7.png",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630458/projects/Restaurant_Admin_wldrna.png",
     "github": "https://github.com/rayan25nov/Restaurant-Admin",
-    "vercel": "https://restaurant-admin-blue.vercel.app/login"
+    "vercel": "https://restaurant-admin-blue.vercel.app/login",
+    "features": [
+      "Admin can update the restaurant's menu, inventory, and order details.",
+      "Admin can create Chef and waiter",
+      "Admin see current Orders"
+    ],
+    "techStack": [
+      "MongoDB - Database",
+      "Express.js - Backend Framework",
+      "React.js - Frontend",
+      "Node.js - Runtime Environment"
+    ],
+    "learnings": [
+      "Building scalable MERN applications.",
+      "Implementing real-time data synchronization using WebSockets."
+    ]
   },
   {
     "id": "10",
     "title": "First Project",
-    "description": "My First Project is a web application that showcases my skills and creativity in web development. I have used html, css, javascript, and materialize framework to create a responsive and attractive interface. My First Project is a demonstration of my passion and potential in web development.",
+    "description": "My First Project is a web application that showcases my skills and creativity in web development. I have used HTML, CSS, JavaScript, and the Materialize framework to create a responsive and attractive interface. My First Project is a demonstration of my passion and potential in web development.",
     "shortDescription": "A responsive interface demonstrating my early skills in web development.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844475/projects/first_project_mqb16k.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630455/projects/First_Project_tfkjv7.png",
     "github": "https://github.com/rayan25nov/My-First-Project",
-    "vercel": "https://my-first-project-steel.vercel.app/"
+    "vercel": "https://my-first-project-steel.vercel.app/",
+    "features": [
+      "Responsive design across all devices.",
+      "Simple, yet functional user interface.",
+      "Uses Materialize framework for styling."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "Materialize"],
+    "learnings": [
+      "Responsive design implementation.",
+      "Working with front-end frameworks like Materialize.",
+      "Building a simple and intuitive interface."
+    ]
   },
   {
     "id": "11",
@@ -107,17 +252,45 @@
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844471/projects/create_notes_bncfcf.gif",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630458/projects/Task_x5r2xf.png",
     "github": "https://github.com/rayan25nov/Create-Notes",
-    "vercel": "https://create-notes.vercel.app/"
+    "vercel": "https://create-notes.vercel.app/",
+    "features": [
+      "Create, edit, and delete notes.",
+      "Add tags for better organization.",
+      "Filter notes by tags (e.g., work, todos, reminders)."
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "Material UI"
+    ],
+    "learnings": [
+      "Working with the MERN stack for full-stack development.",
+      "Implementing CRUD operations.",
+      "Using Material UI for building beautiful interfaces."
+    ]
   },
   {
     "id": "12",
     "title": "Personal Portfolio",
-    "description": "My Portfolio is a web application that displays my work as a web developer. You can explore About me, my education, work, skills, and projects using React, Modular CSS and Swiper.js. My Portfolio is a reflection of my passion and creativity in web development.",
+    "description": "My Portfolio is a web application that displays my work as a web developer. You can explore About me, my education, work, skills, and projects using React, Modular CSS, and Swiper.js. My Portfolio is a reflection of my passion and creativity in web development.",
     "shortDescription": "Showcase of my education, work, skills, and projects as a web developer.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631390/projects/Screenshot_236_ueq7sz.png",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630457/projects/Portfolio_fechxj.png",
     "github": "https://github.com/rayan25nov/Portfolio",
-    "vercel": "https://portfolio-rayan25nov.vercel.app/"
+    "vercel": "https://portfolio-rayan25nov.vercel.app/",
+    "features": [
+      "Sections for About, Education, Work, Skills, and Projects.",
+      "Fully responsive design.",
+      "Smooth navigation with Swiper.js."
+    ],
+    "techStack": ["React.js", "Modular CSS", "Swiper.js"],
+    "learnings": [
+      "Creating a personal portfolio to showcase my work.",
+      "Working with React for building dynamic UIs.",
+      "Using Swiper.js for smooth navigation."
+    ]
   },
   {
     "id": "13",
@@ -127,6 +300,24 @@
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631896/projects/Screenshot_235_awfq4c.png",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630373/projects/BlogApp_dmw82p.png",
     "github": "https://github.com/rayan25nov/Blogify",
-    "vercel": "https://blogify.vercel.app/"
+    "vercel": "https://blogify.vercel.app/",
+    "features": [
+      "Create, edit, and delete blog posts.",
+      "User registration and authentication.",
+      "Search and filter posts by categories.",
+      "Comment section for user interaction."
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "JWT Authentication"
+    ],
+    "learnings": [
+      "Implementing a full-fledged blogging platform with user interactions.",
+      "Handling user authentication with JWT.",
+      "Designing an intuitive interface for content management."
+    ]
   }
 ]
