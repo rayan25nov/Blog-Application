@@ -5,6 +5,7 @@
     "description": "Weather App is a simple and elegant web application that lets you check the current weather conditions of any city in the world. You can switch between dark and light modes, use your current location, or search for a city using the input bar. Weather App is built using React and Modular CSS, and uses OpenWeather API to fetch weather data.",
     "shortDescription": "Check weather conditions worldwide with a sleek React-based UI and OpenWeather API.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844477/projects/weather_app_mmz6ah.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630460/projects/WApp_zfjiek.png",
     "github": "https://github.com/rayan25nov/Weather-Application",
     "vercel": "https://weather-application-vert-alpha.vercel.app/"
   },
@@ -14,6 +15,7 @@
     "description": "URL-Shortener is a web application that allows you to transform long and cumbersome URLs into short and easy ones. You can enter any valid URL and get a shortened version using nanoid. URL-Shortener is built using node.js, express.js, mongoDb, and static files like html, css, javascript. It also has a light/dark mode feature that you can toggle.",
     "shortDescription": "Shorten long URLs easily with this Node.js and MongoDB-powered app.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844480/projects/url_shortener_app_zhe2q3.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630460/projects/UrlShortener_wfkh1w.png",
     "github": "https://github.com/rayan25nov/Url-Shortener",
     "vercel": "https://url-shortener-ten-sigma.vercel.app/"
   },
@@ -23,6 +25,7 @@
     "description": "Expanding-Cards is a web application that showcases a collection of beautiful images in a responsive grid layout. You can click on any image to expand it and see more details. Expanding-Cards is built using html, css and javascript.",
     "shortDescription": "A responsive image gallery with expandable cards for a dynamic user experience.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844475/projects/expanding_cards_soq2rw.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630459/projects/Expanding_Cards_c7kaqs.png",
     "github": "https://github.com/rayan25nov/Expanding-Cards",
     "vercel": "https://expanding-cards-azure.vercel.app/"
   },
@@ -32,15 +35,17 @@
     "description": "Movie-Overview is a web application that lets you browse and discover movies from various genres and categories. You can see the ratings, summaries, and posters of each movie, powered by themoviedb API. Movie-Overview is built using html, css and javascript.",
     "shortDescription": "Discover and explore movies with ratings and posters using the TMDB API.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844477/projects/movie_overview_qhkby9.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630459/projects/Moview_Overview_npihr2.png",
     "github": "https://github.com/rayan25nov/Movie-Overview-App",
     "vercel": "https://movie-overview-app.vercel.app/"
   },
   {
     "id": "5",
-    "title": "Personal Portfolio",
+    "title": "Bootstrap Portfolio",
     "description": "My Portfolio is a web application that displays my work as a web developer. You can explore my projects, skills, and experience using React, React-Bootstrap, and Firebase. My Portfolio is a reflection of my passion and creativity in web development.",
     "shortDescription": "Showcase of my projects, skills, and experience as a web developer.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844477/projects/personal_portfolio_ysa99c.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630455/projects/Bootstrap_Portfolio_yrf5r0.png",
     "github": "https://github.com/rayan25nov/Portfolio",
     "vercel": "https://portfolio-rayan25nov.vercel.app/"
   },
@@ -50,6 +55,7 @@
     "description": "Calculator is a web application that lets you perform basic arithmetic operations with a simple and elegant interface. You can use the buttons or the keyboard to enter numbers and operators. Calculator is built using React, Material UI, and CSS.",
     "shortDescription": "A React-based calculator with an intuitive interface for arithmetic operations.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844471/projects/calculator_rsfwde.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630455/projects/Calculator_y0wndf.png",
     "github": "https://github.com/rayan25nov/Calculator-App",
     "vercel": "https://calculator-app-nu-red.vercel.app/"
   },
@@ -59,6 +65,7 @@
     "description": "Dictionary is a web application that lets you search for the meanings, synonyms, and examples of any word in multiple languages. You can use the elegant and responsive interface, powered by React, Material UI, and CSS, to access the dictionaryapi.dev API. Dictionary also has a dark and light mode feature that you can toggle.",
     "shortDescription": "Look up word meanings, synonyms, and examples in multiple languages.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844472/projects/dictionary_zihuiv.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630454/projects/Dictionary_br3x3g.png",
     "github": "https://github.com/rayan25nov/Dictionary-App",
     "vercel": "https://dictionary-app-jmku.vercel.app/"
   },
@@ -68,25 +75,58 @@
     "description": "Restaurant Management System is a web application that allows you to manage your restaurant operations with ease and efficiency. You can create menus, track orders, manage inventory, and generate reports using the MERN stack.",
     "shortDescription": "Streamline restaurant operations with this full-featured MERN stack application.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1703187234/projects/Restaurant_Management_Application_hxaksm.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630462/projects/Restaurant_Client_vqqitf.png",
     "github": "https://github.com/rayan25nov/restaurant-client",
     "vercel": "https://restaurant-client-sigma.vercel.app/"
   },
   {
     "id": "9",
+    "title": "Restaurant Admin",
+    "description": "Restaurant Management System is a web application that allows you to manage your restaurant operations with ease and efficiency. You can create menus, track orders, manage inventory, and generate reports using the MERN stack.",
+    "shortDescription": "Streamline restaurant operations with this full-featured MERN stack application.",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631647/projects/Screenshot_2024-06-19_220158_saxbg7.png",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630458/projects/Restaurant_Admin_wldrna.png",
+    "github": "https://github.com/rayan25nov/Restaurant-Admin",
+    "vercel": "https://restaurant-admin-blue.vercel.app/login"
+  },
+  {
+    "id": "10",
     "title": "First Project",
     "description": "My First Project is a web application that showcases my skills and creativity in web development. I have used html, css, javascript, and materialize framework to create a responsive and attractive interface. My First Project is a demonstration of my passion and potential in web development.",
     "shortDescription": "A responsive interface demonstrating my early skills in web development.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844475/projects/first_project_mqb16k.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630455/projects/First_Project_tfkjv7.png",
     "github": "https://github.com/rayan25nov/My-First-Project",
     "vercel": "https://my-first-project-steel.vercel.app/"
   },
   {
-    "id": "10",
+    "id": "11",
     "title": "Create Notes",
     "description": "Create Notes is a web application that lets you organize your tasks and thoughts in a simple and intuitive way. You can create notes with different tags, such as work, todos, or reminders, and also delete them when you are done. Create Notes is built using the MERN stack and Material UI.",
     "shortDescription": "Organize your tasks effortlessly with this intuitive MERN-based note app.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1702844471/projects/create_notes_bncfcf.gif",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630458/projects/Task_x5r2xf.png",
     "github": "https://github.com/rayan25nov/Create-Notes",
     "vercel": "https://create-notes.vercel.app/"
+  },
+  {
+    "id": "12",
+    "title": "Personal Portfolio",
+    "description": "My Portfolio is a web application that displays my work as a web developer. You can explore About me, my education, work, skills, and projects using React, Modular CSS and Swiper.js. My Portfolio is a reflection of my passion and creativity in web development.",
+    "shortDescription": "Showcase of my education, work, skills, and projects as a web developer.",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631390/projects/Screenshot_236_ueq7sz.png",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630457/projects/Portfolio_fechxj.png",
+    "github": "https://github.com/rayan25nov/Portfolio",
+    "vercel": "https://portfolio-rayan25nov.vercel.app/"
+  },
+  {
+    "id": "13",
+    "title": "Blogify",
+    "description": "Blogify is a dynamic blogging platform where users can create, edit, and share their thoughts seamlessly. It features a clean, responsive design with intuitive navigation, making it easy to browse and discover content. Built with the MERN stack, Blogify leverages modern web technologies to deliver a smooth and interactive user experience.",
+    "shortDescription": "A modern blogging platform with robust content creation and sharing features.",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631896/projects/Screenshot_235_awfq4c.png",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630373/projects/BlogApp_dmw82p.png",
+    "github": "https://github.com/rayan25nov/Blogify",
+    "vercel": "https://blogify.vercel.app/"
   }
 ]
