@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Project.module.css";
-import projects from "d:/Coding/Blog/blog-frontend/src/Routes/Projects/ProjectData.json";
+import projects from "./ProjectData.json";
 
 const Project = () => {
   return (

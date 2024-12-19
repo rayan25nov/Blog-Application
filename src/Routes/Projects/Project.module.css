@@ -1,3 +1,10 @@
+.container {
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+  width: 80%;
+}
+/* Card container styles */
 .card_container {
   display: flex;
   flex-wrap: wrap;
