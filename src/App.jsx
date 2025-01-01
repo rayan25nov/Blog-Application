@@ -23,6 +23,7 @@ import UpdateBlog from "./Routes/SpecificBlog/UpdateBlog/UpdateBlog";
 import NewsLetter from "./Routes/NewsLetter/NewsLetter";
 import ForgotPassword from "./Auth/forgot-password/ForgotPassword";
 import ResetPassword from "./Auth/reset-password/ResetPassword";
+import SpecificProject from "./Routes/Projects/SpecificProject";
 import Styles from "./App.module.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -87,9 +88,10 @@ const App = () => {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Blog user={user} />} />
-            <Route path="/projects" element={<Project />} />
-            <Route path="/about" element={<About />} />
             <Route path="/specific-blog/:postId" element={<SpecificBlog />} />
+            <Route path="/projects" element={<Project />} />
+            <Route path="/specific-project/:id" element={<SpecificProject />} />
+            <Route path="/about" element={<About />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />

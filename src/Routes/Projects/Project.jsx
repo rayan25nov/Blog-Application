@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Project.module.css";
 import projects from "./ProjectData.json";
+import {Link} from "react-router-dom";
 
 const Project = () => {
   return (
@@ -11,9 +12,13 @@ const Project = () => {
       <p className={styles.text}>List Project</p>
       <div className={styles.card_container}>
         {projects.map((project) => (
-          <div key={project.id} className={styles.card}>
+          <Link
+            to={`/specific-project/${project.id}`}
+            key={project.id}
+            className={styles.card}
+          >
             <img src={project.brand} alt="Project Brand" />
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -1,0 +1,139 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  font-family: "Roboto", sans-serif;
+}
+
+.h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+.sd {
+  font-size: 1.25rem;
+  color: #4859ee;
+  margin-bottom: 1.5rem;
+}
+
+.image {
+  width: 100%;
+  /* max-width: 600px; */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.left,
+.right {
+  flex: 1;
+  min-width: 300px;
+  margin: 10px;
+}
+
+.left {
+  order: 1;
+}
+
+.right {
+  order: 2;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Link styled as a button */
+.link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  margin: 0 1.5rem 0.75rem 0;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradient color */
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease; /* Hover transition */
+}
+
+/* Hover effect */
+.link:hover {
+  background: linear-gradient(45deg, #2575fc, #6a11cb); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Inner elements styles */
+.link span {
+  margin-right: 10px;
+}
+
+.link img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1); /* Invert the color */
+}
+
+/* Tool styled as a button */
+.tool {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  margin: 0.5rem;
+} /* Hover effect for tool */
+.tool:hover {
+  background: linear-gradient(45deg, #feb47b, #ff7e5f); /* Reverse gradient */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+} /* Inner elements styles for tool */
+.tool img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.tool p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    order: unset;
+    min-width: 100%;
+  }
+}

@@ -22,10 +22,59 @@
       "Integrating third-party APIs",
       "Creating responsive UI components",
       "Managing state efficiently"
+    ],
+    "tools": [
+      {
+        "name": "React",
+        "image": "https://reactjs.org/logo-og.png"
+      },
+      {
+        "name": "CSS",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+      },
+      {
+        "name": "OpenWeather API",
+        "image": "https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
+      }
     ]
   },
   {
     "id": "2",
+    "title": "Personal Portfolio",
+    "description": "My Portfolio is a web application that displays my work as a web developer. You can explore About me, my education, work, skills, and projects using React, Modular CSS, and Swiper.js. My Portfolio is a reflection of my passion and creativity in web development.",
+    "shortDescription": "Showcase of my education, work, skills, and projects as a web developer.",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631390/projects/Screenshot_236_ueq7sz.png",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630457/projects/Portfolio_fechxj.png",
+    "github": "https://github.com/rayan25nov/Personal-Portfolio",
+    "vercel": "https://personal-portfolio-delta-sooty.vercel.app/",
+    "features": [
+      "Sections for About, Education, Work, Skills, and Projects.",
+      "Fully responsive design.",
+      "Smooth navigation with Swiper.js."
+    ],
+    "techStack": ["React.js", "Modular CSS", "Swiper.js"],
+    "learnings": [
+      "Creating a personal portfolio to showcase my work.",
+      "Working with React for building dynamic UIs.",
+      "Using Swiper.js for smooth navigation."
+    ],
+    "tools": [
+      {
+        "name": "React.js",
+        "image": "https://reactjs.org/logo-og.png"
+      },
+      {
+        "name": "Modular CSS",
+        "image": "https://dummyimage.com/600x400/000/fff&text=Modular+CSS"
+      },
+      {
+        "name": "Swiper.js",
+        "image": "https://swiperjs.com/images/share-banner-3.png"
+      }
+    ]
+  },
+  {
+    "id": "3",
     "title": "Url Shortener",
     "description": "URL-Shortener is a web application that allows you to transform long and cumbersome URLs into short and easy ones. You can enter any valid URL and get a shortened version using nanoid. URL-Shortener is built using Node.js, Express.js, MongoDB, and static files like HTML, CSS, and JavaScript. It also has a light/dark mode feature that you can toggle.",
     "shortDescription": "Shorten long URLs easily with this Node.js and MongoDB-powered app.",
@@ -48,10 +97,101 @@
       "Building REST APIs",
       "Integrating MongoDB for persistent storage",
       "Implementing light/dark mode toggle"
+    ],
+    "tools": [
+      {
+        "name": "Node.js",
+        "image": "https://nodejs.org/static/images/logo.svg"
+      },
+      {
+        "name": "MongoDB",
+        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+      },
+      {
+        "name": "Express.js",
+        "image": "https://expressjs.com/images/express-facebook-share.png"
+      },
+      {
+        "name": "HTML",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+      },
+      {
+        "name": "CSS",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+      },
+      {
+        "name": "JavaScript",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+      }
+    ]
+  },
+   {
+    "id": "4",
+    "title": "Blogify",
+    "description": "Blogify is a dynamic blogging platform where users can create, edit, and share their thoughts seamlessly. It features a clean, responsive design with intuitive navigation, making it easy to browse and discover content. Built with the MERN stack, Blogify leverages modern web technologies to deliver a smooth and interactive user experience.",
+    "shortDescription": "A modern blogging platform with robust content creation and sharing features.",
+    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631896/projects/Screenshot_235_awfq4c.png",
+    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630373/projects/BlogApp_dmw82p.png",
+    "github": "https://github.com/rayan25nov/Blog-Application",
+    "vercel": "https://blog-application-rho.vercel.app/",
+    "features": [
+      "Create, edit, and delete blog posts.",
+      "User registration and authentication.",
+      "Search and filter posts by categories.",
+      "Comment section for user interaction."
+    ],
+    "techStack": [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "JWT Authentication",
+      "Cloudinary",
+      "Node Mailer",
+      "Redux.js"
+    ],
+    "learnings": [
+      "Implementing a full-fledged blogging platform with user interactions.",
+      "Handling user authentication with JWT.",
+      "Designing an intuitive interface for content management."
+    ],
+    "tools": [
+      {
+        "name": "MongoDB",
+        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+      },
+      {
+        "name": "Express.js",
+        "image": "https://expressjs.com/images/express-facebook-share.png"
+      },
+      {
+        "name": "React.js",
+        "image": "https://reactjs.org/logo-og.png"
+      },
+      {
+        "name": "Node.js",
+        "image": "https://nodejs.org/static/images/logo.svg"
+      },
+      {
+        "name": "JWT Authentication",
+        "image": "https://jwt.io/img/pic_logo.svg"
+      },
+      {
+        "name": "Cloudinary",
+        "image": "https://res.cloudinary.com/cloudinary/image/upload/v1616166640/cloudinary_icon.png"
+      },
+      {
+        "name": "Node Mailer",
+        "image": "https://dummyimage.com/600x400/000/fff&text=Node+Mailer"
+      },
+      {
+        "name": "Redux.js",
+        "image": "https://redux.js.org/img/redux-logo-landscape.png"
+      }
     ]
   },
   {
-    "id": "3",
+    "id": "5",
     "title": "Expanding Cards",
     "description": "Expanding-Cards is a web application that showcases a collection of beautiful images in a responsive grid layout. You can click on any image to expand it and see more details. Expanding-Cards is built using HTML, CSS, and JavaScript.",
     "shortDescription": "A responsive image gallery with expandable cards for a dynamic user experience.",
@@ -73,10 +213,24 @@
       "Creating interactive UI components",
       "Implementing responsive design",
       "Working with grid layouts"
+    ],
+    "tools": [
+      {
+        "name": "HTML",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+      },
+      {
+        "name": "CSS",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+      },
+      {
+        "name": "JavaScript",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+      }
     ]
   },
   {
-    "id": "4",
+    "id": "6",
     "title": "Movie Overview App",
     "description": "Movie-Overview is a web application that lets you browse and discover movies from various genres and categories. You can see the ratings, summaries, and posters of each movie, powered by the TMDB API. Movie-Overview is built using HTML, CSS, and JavaScript.",
     "shortDescription": "Discover and explore movies with ratings and posters using the TMDB API.",
@@ -99,10 +253,28 @@
       "API integration for real-time data",
       "Building dynamic search features",
       "Creating user-friendly interfaces"
+    ],
+    "tools": [
+      {
+        "name": "HTML",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+      },
+      {
+        "name": "CSS",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+      },
+      {
+        "name": "JavaScript",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+      },
+      {
+        "name": "TMDB API",
+        "image": "https://dummyimage.com/600x400/000/fff&text=TMDB+API"
+      }
     ]
   },
   {
-    "id": "5",
+    "id": "7",
     "title": "Bootstrap Portfolio",
     "description": "My Portfolio is a web application that displays my work as a web developer. You can explore my projects, skills, and experience using React, React-Bootstrap, and Firebase. My Portfolio is a reflection of my passion and creativity in web development.",
     "shortDescription": "Showcase of my projects, skills, and experience as a web developer.",
@@ -123,10 +295,24 @@
     "learnings": [
       "Implementing responsive designs with Bootstrap.",
       "Integrating Firebase for hosting and deployment."
+    ],
+    "tools": [
+      {
+        "name": "React.js",
+        "image": "https://reactjs.org/logo-og.png"
+      },
+      {
+        "name": "React-Bootstrap",
+        "image": "https://react-bootstrap.github.io/logo.svg"
+      },
+      {
+        "name": "Firebase",
+        "image": "https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png"
+      }
     ]
   },
   {
-    "id": "6",
+    "id": "8",
     "title": "Calculator App",
     "description": "Calculator is a web application that lets you perform basic arithmetic operations with a simple and elegant interface. You can use the buttons or the keyboard to enter numbers and operators. Calculator is built using React, Material UI, and CSS.",
     "shortDescription": "A React-based calculator with an intuitive interface for arithmetic operations.",
@@ -147,10 +333,24 @@
     "learnings": [
       "Enhancing UI/UX for interactive applications.",
       "Implementing keyboard event handlers in React."
+    ],
+    "tools": [
+      {
+        "name": "React.js",
+        "image": "https://reactjs.org/logo-og.png"
+      },
+      {
+        "name": "Material UI",
+        "image": "https://material-ui.com/static/logo.png"
+      },
+      {
+        "name": "CSS",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+      }
     ]
   },
   {
-    "id": "7",
+    "id": "9",
     "title": "Dictionary App",
     "description": "Dictionary is a web application that lets you search for the meanings, synonyms, and examples of any word in multiple languages. You can use the elegant and responsive interface, powered by React, Material UI, and CSS, to access the dictionaryapi.dev API. Dictionary also has a dark and light mode feature that you can toggle.",
     "shortDescription": "Look up word meanings, synonyms, and examples in multiple languages.",
@@ -171,10 +371,28 @@
     "learnings": [
       "Integrating external APIs effectively.",
       "Managing state in React for dynamic content."
+    ],
+    "tools": [
+      {
+        "name": "React.js",
+        "image": "https://reactjs.org/logo-og.png"
+      },
+      {
+        "name": "Material UI",
+        "image": "https://material-ui.com/static/logo.png"
+      },
+      {
+        "name": "CSS",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+      },
+      {
+        "name": "dictionaryapi.dev API",
+        "image": "https://dummyimage.com/600x400/000/fff&text=dictionaryapi.dev+API"
+      }
     ]
   },
   {
-    "id": "8",
+    "id": "10",
     "title": "Restaurant Management System",
     "description": "Restaurant Management System is a web application that allows you to manage your restaurant operations with ease and efficiency. You can create menus, track orders, manage inventory, and generate reports using the MERN stack.",
     "shortDescription": "Streamline restaurant operations with this full-featured MERN stack application.",
@@ -196,17 +414,35 @@
     "learnings": [
       "Building scalable MERN applications.",
       "Implementing real-time data synchronization using WebSockets."
+    ],
+    "tools": [
+      {
+        "name": "MongoDB",
+        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+      },
+      {
+        "name": "Express.js",
+        "image": "https://expressjs.com/images/express-facebook-share.png"
+      },
+      {
+        "name": "React.js",
+        "image": "https://reactjs.org/logo-og.png"
+      },
+      {
+        "name": "Node.js",
+        "image": "https://nodejs.org/static/images/logo.svg"
+      }
     ]
   },
   {
-    "id": "9",
+    "id": "11",
     "title": "Restaurant Admin",
     "description": "Restaurant Management System is a web application that allows you to manage your restaurant operations with ease and efficiency. You can create menus, track orders, manage inventory, and generate reports using the MERN stack.",
     "shortDescription": "Streamline restaurant operations with this full-featured MERN stack application.",
     "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631647/projects/Screenshot_2024-06-19_220158_saxbg7.png",
     "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630458/projects/Restaurant_Admin_wldrna.png",
     "github": "https://github.com/rayan25nov/Restaurant-Admin",
-    "vercel": "https://restaurant-admin-blue.vercel.app/login",
+    "vercel": "https://restaurant-admin-blue.vercel.app",
     "features": [
       "Admin can update the restaurant's menu, inventory, and order details.",
       "Admin can create Chef and waiter",
@@ -221,10 +457,28 @@
     "learnings": [
       "Building scalable MERN applications.",
       "Implementing real-time data synchronization using WebSockets."
+    ],
+    "tools": [
+      {
+        "name": "MongoDB",
+        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+      },
+      {
+        "name": "Express.js",
+        "image": "https://expressjs.com/images/express-facebook-share.png"
+      },
+      {
+        "name": "React.js",
+        "image": "https://reactjs.org/logo-og.png"
+      },
+      {
+        "name": "Node.js",
+        "image": "https://nodejs.org/static/images/logo.svg"
+      }
     ]
   },
   {
-    "id": "10",
+    "id": "12",
     "title": "First Project",
     "description": "My First Project is a web application that showcases my skills and creativity in web development. I have used HTML, CSS, JavaScript, and the Materialize framework to create a responsive and attractive interface. My First Project is a demonstration of my passion and potential in web development.",
     "shortDescription": "A responsive interface demonstrating my early skills in web development.",
@@ -242,10 +496,28 @@
       "Responsive design implementation.",
       "Working with front-end frameworks like Materialize.",
       "Building a simple and intuitive interface."
+    ],
+    "tools": [
+      {
+        "name": "HTML",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+      },
+      {
+        "name": "CSS",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+      },
+      {
+        "name": "JavaScript",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+      },
+      {
+        "name": "Materialize",
+        "image": "https://dummyimage.com/600x400/000/fff&text=Materialize"
+      }
     ]
   },
   {
-    "id": "11",
+    "id": "13",
     "title": "Create Notes",
     "description": "Create Notes is a web application that lets you organize your tasks and thoughts in a simple and intuitive way. You can create notes with different tags, such as work, todos, or reminders, and also delete them when you are done. Create Notes is built using the MERN stack and Material UI.",
     "shortDescription": "Organize your tasks effortlessly with this intuitive MERN-based note app.",
@@ -269,55 +541,28 @@
       "Working with the MERN stack for full-stack development.",
       "Implementing CRUD operations.",
       "Using Material UI for building beautiful interfaces."
-    ]
-  },
-  {
-    "id": "12",
-    "title": "Personal Portfolio",
-    "description": "My Portfolio is a web application that displays my work as a web developer. You can explore About me, my education, work, skills, and projects using React, Modular CSS, and Swiper.js. My Portfolio is a reflection of my passion and creativity in web development.",
-    "shortDescription": "Showcase of my education, work, skills, and projects as a web developer.",
-    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631390/projects/Screenshot_236_ueq7sz.png",
-    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630457/projects/Portfolio_fechxj.png",
-    "github": "https://github.com/rayan25nov/Portfolio",
-    "vercel": "https://portfolio-rayan25nov.vercel.app/",
-    "features": [
-      "Sections for About, Education, Work, Skills, and Projects.",
-      "Fully responsive design.",
-      "Smooth navigation with Swiper.js."
     ],
-    "techStack": ["React.js", "Modular CSS", "Swiper.js"],
-    "learnings": [
-      "Creating a personal portfolio to showcase my work.",
-      "Working with React for building dynamic UIs.",
-      "Using Swiper.js for smooth navigation."
-    ]
-  },
-  {
-    "id": "13",
-    "title": "Blogify",
-    "description": "Blogify is a dynamic blogging platform where users can create, edit, and share their thoughts seamlessly. It features a clean, responsive design with intuitive navigation, making it easy to browse and discover content. Built with the MERN stack, Blogify leverages modern web technologies to deliver a smooth and interactive user experience.",
-    "shortDescription": "A modern blogging platform with robust content creation and sharing features.",
-    "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1734631896/projects/Screenshot_235_awfq4c.png",
-    "brand": "https://res.cloudinary.com/dex9pejve/image/upload/v1734630373/projects/BlogApp_dmw82p.png",
-    "github": "https://github.com/rayan25nov/Blogify",
-    "vercel": "https://blogify.vercel.app/",
-    "features": [
-      "Create, edit, and delete blog posts.",
-      "User registration and authentication.",
-      "Search and filter posts by categories.",
-      "Comment section for user interaction."
-    ],
-    "techStack": [
-      "MongoDB",
-      "Express.js",
-      "React.js",
-      "Node.js",
-      "JWT Authentication"
-    ],
-    "learnings": [
-      "Implementing a full-fledged blogging platform with user interactions.",
-      "Handling user authentication with JWT.",
-      "Designing an intuitive interface for content management."
+    "tools": [
+      {
+        "name": "MongoDB",
+        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+      },
+      {
+        "name": "Express.js",
+        "image": "https://expressjs.com/images/express-facebook-share.png"
+      },
+      {
+        "name": "React.js",
+        "image": "https://reactjs.org/logo-og.png"
+      },
+      {
+        "name": "Node.js",
+        "image": "https://nodejs.org/static/images/logo.svg"
+      },
+      {
+        "name": "Material UI",
+        "image": "https://material-ui.com/static/logo.png"
+      }
     ]
   }
 ]
