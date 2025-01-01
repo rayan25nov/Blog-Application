@@ -66,6 +66,17 @@ const SpecificProject = () => {
             </span>
           ))}
         </div>
+        {project.videoId && (
+          <iframe
+            width="100%"
+            height="315"
+            src={`https://www.youtube.com/embed/${project.videoId}`}
+            title={project.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className={styles.video}
+          ></iframe>
+        )}
       </div>
     </div>
   );

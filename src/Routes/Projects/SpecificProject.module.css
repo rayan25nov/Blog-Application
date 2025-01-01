@@ -126,6 +126,11 @@ li {
   margin: 0;
 }
 
+.video {
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+}
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -135,5 +140,10 @@ li {
   .right {
     order: unset;
     min-width: 100%;
+  }
+  .sd {
+    font-size: 1rem;
+    color: #4859ee;
+    margin-bottom: 1rem;
   }
 }

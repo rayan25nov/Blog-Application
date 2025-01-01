@@ -26,17 +26,18 @@
     "tools": [
       {
         "name": "React",
-        "image": "https://reactjs.org/logo-og.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/react_eek73t.svg"
       },
       {
         "name": "CSS",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/css3_pb8tol.svg"
       },
       {
         "name": "OpenWeather API",
-        "image": "https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/openweather-seeklogo_wygc9b.svg"
       }
-    ]
+    ],
+    "videoId": "6hFJTxD1omE"
   },
   {
     "id": "2",
@@ -61,15 +62,15 @@
     "tools": [
       {
         "name": "React.js",
-        "image": "https://reactjs.org/logo-og.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/react_eek73t.svg"
       },
       {
         "name": "Modular CSS",
-        "image": "https://dummyimage.com/600x400/000/fff&text=Modular+CSS"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/css3_pb8tol.svg"
       },
       {
         "name": "Swiper.js",
-        "image": "https://swiperjs.com/images/share-banner-3.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745242/icons/swiper-logo_r8mc1h.svg"
       }
     ]
   },
@@ -101,31 +102,32 @@
     "tools": [
       {
         "name": "Node.js",
-        "image": "https://nodejs.org/static/images/logo.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/node_cw6sqf.svg"
       },
       {
         "name": "MongoDB",
-        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/mongodb_telhxb.svg"
       },
       {
         "name": "Express.js",
-        "image": "https://expressjs.com/images/express-facebook-share.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/icons8-express-js_satkwm.svg"
       },
       {
         "name": "HTML",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/html5_ykfrsi.svg"
       },
       {
         "name": "CSS",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/css3_pb8tol.svg"
       },
       {
         "name": "JavaScript",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/js_nmi8vh.svg"
       }
-    ]
+    ],
+    "videoId": "r3O9dRxxoN8"
   },
-   {
+  {
     "id": "4",
     "title": "Blogify",
     "description": "Blogify is a dynamic blogging platform where users can create, edit, and share their thoughts seamlessly. It features a clean, responsive design with intuitive navigation, making it easy to browse and discover content. Built with the MERN stack, Blogify leverages modern web technologies to deliver a smooth and interactive user experience.",
@@ -158,37 +160,38 @@
     "tools": [
       {
         "name": "MongoDB",
-        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/mongodb_telhxb.svg"
       },
       {
         "name": "Express.js",
-        "image": "https://expressjs.com/images/express-facebook-share.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/icons8-express-js_satkwm.svg"
       },
       {
-        "name": "React.js",
-        "image": "https://reactjs.org/logo-og.png"
+        "name": "React",
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/react_eek73t.svg"
       },
       {
         "name": "Node.js",
-        "image": "https://nodejs.org/static/images/logo.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/node_cw6sqf.svg"
       },
       {
         "name": "JWT Authentication",
-        "image": "https://jwt.io/img/pic_logo.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/jwt_m3fgiu.svg"
       },
       {
         "name": "Cloudinary",
-        "image": "https://res.cloudinary.com/cloudinary/image/upload/v1616166640/cloudinary_icon.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/cloudinary_icon_jeunf6.svg"
       },
       {
         "name": "Node Mailer",
-        "image": "https://dummyimage.com/600x400/000/fff&text=Node+Mailer"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745728/icons/node-mailer_p4ozow.svg"
       },
       {
         "name": "Redux.js",
-        "image": "https://redux.js.org/img/redux-logo-landscape.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745242/icons/redux_zmsgdv.svg"
       }
-    ]
+    ],
+    "videoId": "C_01RB6gtBw"
   },
   {
     "id": "5",
@@ -217,17 +220,18 @@
     "tools": [
       {
         "name": "HTML",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/html5_ykfrsi.svg"
       },
       {
         "name": "CSS",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/css3_pb8tol.svg"
       },
       {
         "name": "JavaScript",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/js_nmi8vh.svg"
       }
-    ]
+    ],
+    "videoId": "pEoycitCjls"
   },
   {
     "id": "6",
@@ -257,21 +261,22 @@
     "tools": [
       {
         "name": "HTML",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/html5_ykfrsi.svg"
       },
       {
         "name": "CSS",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/css3_pb8tol.svg"
       },
       {
         "name": "JavaScript",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/js_nmi8vh.svg"
       },
       {
         "name": "TMDB API",
-        "image": "https://dummyimage.com/600x400/000/fff&text=TMDB+API"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/api_u5ol8h.svg"
       }
-    ]
+    ],
+    "videoId": "J8w_61fV1-g"
   },
   {
     "id": "7",
@@ -299,17 +304,18 @@
     "tools": [
       {
         "name": "React.js",
-        "image": "https://reactjs.org/logo-og.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/react_eek73t.svg"
       },
       {
         "name": "React-Bootstrap",
-        "image": "https://react-bootstrap.github.io/logo.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/bootstrap_jo7hew.svg"
       },
       {
         "name": "Firebase",
-        "image": "https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/firebase_dbq19r.svg"
       }
-    ]
+    ],
+    "videoId": "j2wdXLsXsio"
   },
   {
     "id": "8",
@@ -337,17 +343,18 @@
     "tools": [
       {
         "name": "React.js",
-        "image": "https://reactjs.org/logo-og.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/react_eek73t.svg"
       },
       {
         "name": "Material UI",
-        "image": "https://material-ui.com/static/logo.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745242/icons/mui_iua3i6.svg"
       },
       {
         "name": "CSS",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/css3_pb8tol.svg"
       }
-    ]
+    ],
+    "videoId": "r0WCfe_4cFU"
   },
   {
     "id": "9",
@@ -375,21 +382,22 @@
     "tools": [
       {
         "name": "React.js",
-        "image": "https://reactjs.org/logo-og.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/react_eek73t.svg"
       },
       {
         "name": "Material UI",
-        "image": "https://material-ui.com/static/logo.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745242/icons/mui_iua3i6.svg"
       },
       {
         "name": "CSS",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/css3_pb8tol.svg"
       },
       {
         "name": "dictionaryapi.dev API",
-        "image": "https://dummyimage.com/600x400/000/fff&text=dictionaryapi.dev+API"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/api_u5ol8h.svg"
       }
-    ]
+    ],
+    "videoId": "kn4J1io85fo"
   },
   {
     "id": "10",
@@ -418,21 +426,22 @@
     "tools": [
       {
         "name": "MongoDB",
-        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/mongodb_telhxb.svg"
       },
       {
         "name": "Express.js",
-        "image": "https://expressjs.com/images/express-facebook-share.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/icons8-express-js_satkwm.svg"
       },
       {
         "name": "React.js",
-        "image": "https://reactjs.org/logo-og.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/react_eek73t.svg"
       },
       {
         "name": "Node.js",
-        "image": "https://nodejs.org/static/images/logo.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/node_cw6sqf.svg"
       }
-    ]
+    ],
+    "videoId": "LmuKcB2aQ5Q"
   },
   {
     "id": "11",
@@ -461,21 +470,22 @@
     "tools": [
       {
         "name": "MongoDB",
-        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/mongodb_telhxb.svg"
       },
       {
         "name": "Express.js",
-        "image": "https://expressjs.com/images/express-facebook-share.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/icons8-express-js_satkwm.svg"
       },
       {
         "name": "React.js",
-        "image": "https://reactjs.org/logo-og.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/react_eek73t.svg"
       },
       {
         "name": "Node.js",
-        "image": "https://nodejs.org/static/images/logo.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/node_cw6sqf.svg"
       }
-    ]
+    ],
+    "videoId": "LmuKcB2aQ5Q"
   },
   {
     "id": "12",
@@ -500,21 +510,22 @@
     "tools": [
       {
         "name": "HTML",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/html5_ykfrsi.svg"
       },
       {
         "name": "CSS",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/css3_pb8tol.svg"
       },
       {
         "name": "JavaScript",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/js_nmi8vh.svg"
       },
       {
         "name": "Materialize",
-        "image": "https://dummyimage.com/600x400/000/fff&text=Materialize"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/materialize_be0ms0.svg"
       }
-    ]
+    ],
+    "videoId": "lHm2LmQqO_4"
   },
   {
     "id": "13",
@@ -545,24 +556,25 @@
     "tools": [
       {
         "name": "MongoDB",
-        "image": "https://www.mongodb.com/assets/images/global/leaf.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745239/icons/mongodb_telhxb.svg"
       },
       {
         "name": "Express.js",
-        "image": "https://expressjs.com/images/express-facebook-share.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745238/icons/icons8-express-js_satkwm.svg"
       },
       {
         "name": "React.js",
-        "image": "https://reactjs.org/logo-og.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/react_eek73t.svg"
       },
       {
         "name": "Node.js",
-        "image": "https://nodejs.org/static/images/logo.svg"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745241/icons/node_cw6sqf.svg"
       },
       {
         "name": "Material UI",
-        "image": "https://material-ui.com/static/logo.png"
+        "image": "https://res.cloudinary.com/dex9pejve/image/upload/v1735745242/icons/mui_iua3i6.svg"
       }
-    ]
+    ],
+    "videoId": "Fs3N9TvOYoY"
   }
 ]
