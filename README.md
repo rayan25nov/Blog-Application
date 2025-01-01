@@ -224,6 +224,9 @@ The project follows a modular and scalable structure for maintainability and eas
 
 #### Projects Section
 
+![Project Page](<./src/assets/readme/Screenshot (245).png>)
+![Specific Project Page](<./src/assets/readme/Screenshot (246).png>)
+
 #### About Section
 
 ![About Page](<./src/assets/readme/Screenshot (228).png>)
