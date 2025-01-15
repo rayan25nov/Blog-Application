@@ -18,6 +18,7 @@ import Login from "./Auth/login/Login";
 import Signup from "./Auth/signup/Signup";
 import EmailVerify from "./Auth/emailverify/EmailVerify";
 import Profile from "./Routes/Profile/Profile";
+import EditProfile from "./Routes/Profile/EditProfile";
 import SpecificBlog from "./Routes/SpecificBlog/SpecificBlog";
 import UpdateBlog from "./Routes/SpecificBlog/UpdateBlog/UpdateBlog";
 import NewsLetter from "./Routes/NewsLetter/NewsLetter";
@@ -106,6 +107,10 @@ const App = () => {
               <>
                 <Route path="/create-post" element={<CreateBlog />} />
                 <Route path="/profile" element={<Profile user={user} />} />
+                <Route
+                  path="/profile-edit"
+                  element={<EditProfile user={user} />}
+                />
                 <Route path="/update-post/:postId" element={<UpdateBlog />} />
                 <Route path="/newsletter" element={<NewsLetter />} />
               </>
