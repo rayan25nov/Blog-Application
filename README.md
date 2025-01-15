@@ -1,5 +1,7 @@
 # Blog Application Frontend
 
+![GitHub repo size](https://img.shields.io/github/repo-size/rayan25nov/Blog-Application?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/rayan25nov/Blog-Application?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues/rayan25nov/Blog-Application?style=for-the-badge) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![Modular CSS](https://img.shields.io/badge/Modular%20CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white) ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white) ![React Toastify](https://img.shields.io/badge/React%20Toastify-FFDD57?style=for-the-badge&logo=react&logoColor=black) ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
+
 A responsive blog frontend project built using **React**, **Vite**, and **Modular CSS**. The application features CRUD functionality for blogs, liking and commenting, showcasing projects, an about-me section, and a newsletter displaying current news.
 
 ## 📑 Table of Contents
@@ -34,7 +36,6 @@ A responsive blog frontend project built using **React**, **Vite**, and **Modula
 - Styling: Modular CSS
 - State Management: Redux Toolkit
 - API Calls: Axios
-- Carousel: Swiper.js
 - Notifications: React Toastify
 - Development: Vite for fast builds and hot module replacement
 
@@ -241,7 +242,8 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📜 License
 
-This project is licensed under the ISC License.
+This project is licensed under the [MIT License](./LICENSE).
+
 
 ## ✨ Acknowledgements
 
