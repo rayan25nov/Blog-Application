@@ -135,6 +135,12 @@ const EditProfile = ({ user }) => {
     const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
     const JWT_TOKEN = localStorage.getItem("token");
     try {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("country", country);
+      formData.append("gender", gender);
       if (
         password.trim() === "" ||
         name.trim() === "" ||
@@ -149,12 +155,6 @@ const EditProfile = ({ user }) => {
         toast.error("Password must be at least 6 characters");
         return;
       }
-      const formData = new FormData();
-      formData.append("name", name);
-      formData.append("email", email);
-      formData.append("password", password);
-      formData.append("country", country);
-      formData.append("gender", gender);
 
       // Convert profileImage (base64) to File
       if (profileImage.startsWith("data:image")) {
