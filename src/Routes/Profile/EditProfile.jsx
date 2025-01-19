@@ -8,11 +8,15 @@ import EyeOff from "../../assets/images/eye-off.svg";
 import axios from "axios";
 import countryList from "react-select-country-list";
 import { toast } from "react-toastify";
+import { selectDarkMode } from "../../Features/ToggleModeSlice";
+import { useSelector } from "react-redux";
+import Loader from "../../loader/Loader";
 
 const EditProfile = ({ user }) => {
   if (!user) {
     return <div>Loading...</div>;
   }
+  const darkMode = useSelector(selectDarkMode);
   const [profileImage, setProfileImage] = useState(user.image); // Current profile image
   const [selectedImage, setSelectedImage] = useState(null); // Image selected for cropping
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null); // Cropping area
@@ -27,6 +31,7 @@ const EditProfile = ({ user }) => {
   const [country, setCountry] = useState(user.country ? user.country : "");
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -131,6 +136,7 @@ const EditProfile = ({ user }) => {
   };
 
   const updateProfileHandler = async () => {
+    setLoading(true);
     console.log(name, email, password, gender, country);
     const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
     const JWT_TOKEN = localStorage.getItem("token");
@@ -172,177 +178,199 @@ const EditProfile = ({ user }) => {
           },
         }
       );
-      toast.success("Profile updated successfully");
+      toast.success(res.message);
+      if (res.logout) {
+        localStorage.removeItem("token");
+        window.location.reload();
+      }
     } catch (error) {
       toast.error("Error updating profile");
       console.error("Error while updating user data:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.profile}>
-        <header className={styles.header}>
-          <h1>Welcome, {user.name}</h1>
-          <p>{date}</p>
-        </header>
-        <div className={styles.border}></div>
-        <main className={styles.main}>
-          <div className={styles.profileHeader}>
-            <div className={styles.profileIcon}>
-              <img
-                src={profileImage}
-                alt="Profile"
-                className={styles.profileImage}
-              />
-              <img
-                src={Camera}
-                alt="Camera"
-                className={styles.camera}
-                onClick={uploadImage}
-              />
-            </div>
-            <div>
-              <h2>{user.name}</h2>
-              <p>{user.email}</p>
-            </div>
-            <button
-              className={styles.editButton}
-              onClick={updateProfileHandler}
-            >
-              Edit
-            </button>
-          </div>
-          <div className={styles.profileDetails}>
-            <div className={styles.formGroup}>
-              <label>Full Name</label>
-              <input
-                type="text"
-                placeholder="Your First Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)} // Fix here
-                required={true}
-              />
-            </div>
-            <div className={styles.formGroup}>
-              <label>Email</label>
-              <input
-                type="text"
-                placeholder="Your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)} // Fix here
-                required={true}
-              />
-            </div>
-
-            <div className={styles.formGroup}>
-              <label>Password</label>
-              <div className={styles.passwordInput}>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Your Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required={true}
-                />
-                <img
-                  src={showPassword ? EyeOff : Eye}
-                  alt="toggle password visibility"
-                  onClick={togglePasswordVisibility}
-                  className={styles.togglePassword}
-                />
-              </div>
-            </div>
-
-            <div className={styles.formGroup}>
-              <label>Gender</label>
-              <div className={styles.customSelect}>
-                <select
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)} // Update gender state
-                  required={true}
-                >
-                  <option value="" disabled>
-                    Select Gender
-                  </option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-            </div>
-            <div className={styles.formGroup}>
-              <label>Country</label>
-              <input
-                type="text"
-                placeholder="Country"
-                value={country}
-                onChange={handleCountryInput}
-                required={true}
-              />
-              {filteredCountries.length > 0 && (
-                <ul className={styles.suggestionsList}>
-                  {filteredCountries.map((name, index) => (
-                    <li
-                      key={index}
-                      className={styles.suggestionItem}
-                      // Update country state on click also reset suggestions
-                      onClick={() => {
-                        setCountry(name.label);
-                        setFilteredCountries([]);
-                      }}
-                    >
-                      {name.label}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </div>
-          <div className={styles.emailSection}>
-            <h3>My Email Address</h3>
-            <div className={styles.emailDetails}>
-              <div className={styles.emailIcon}>
-                <img
-                  src={Email}
-                  alt="Profile"
-                  className={styles.profileImage}
-                />
-              </div>
-              <div>
-                <p>{user.email}</p>
-                <p>{createdAt}</p>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-
-      {/* Crop Modal */}
-      {isCropping && (
-        <div className={styles.cropModal}>
-          <div className={styles.cropContainer}>
-            <div className={styles.cropArea}>
-              <Cropper
-                image={selectedImage}
-                crop={crop}
-                zoom={zoom}
-                aspect={1} // Square aspect ratio
-                onCropChange={setCrop}
-                onCropComplete={onCropComplete}
-                onZoomChange={setZoom}
-              />
-            </div>
-            <div className={styles.cropActions}>
-              <button onClick={cancelCropping} className={styles.cancelButton}>
-                Cancel
-              </button>
-              <button onClick={cropImage} className={styles.saveButton}>
-                Save
-              </button>
-            </div>
-          </div>
+    <div
+      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
+    >
+      {loading && (
+        <div className={styles.loaderContainer}>
+          <p className={styles.text}>Updating Profile please wait...</p>
+          <Loader />
         </div>
+      )}
+      {/* Show loader if loading is true */}
+      {!loading && (
+        <>
+          <div className={styles.profile}>
+            <header className={styles.header}>
+              <h1>Welcome, {user.name}</h1>
+              <p>{date}</p>
+            </header>
+            <div className={styles.border}></div>
+            <main className={styles.main}>
+              <div className={styles.profileHeader}>
+                <div className={styles.profileIcon}>
+                  <img
+                    src={profileImage}
+                    alt="Profile"
+                    className={styles.profileImage}
+                  />
+                  <img
+                    src={Camera}
+                    alt="Camera"
+                    className={styles.camera}
+                    onClick={uploadImage}
+                  />
+                </div>
+                <div className={styles.profileDetails}>
+                  <h2>{user.name}</h2>
+                  <p>{user.email}</p>
+                </div>
+                <button
+                  className={styles.editButton}
+                  onClick={updateProfileHandler}
+                >
+                  Edit
+                </button>
+              </div>
+              <div className={styles.profileDetails}>
+                <div className={styles.formGroup}>
+                  <label>Full Name</label>
+                  <input
+                    type="text"
+                    placeholder="Your First Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)} // Fix here
+                    required={true}
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Email</label>
+                  <input
+                    type="text"
+                    placeholder="Your Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)} // Fix here
+                    required={true}
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label>Password</label>
+                  <div className={styles.passwordInput}>
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Your Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required={true}
+                    />
+                    <img
+                      src={showPassword ? EyeOff : Eye}
+                      alt="toggle password visibility"
+                      onClick={togglePasswordVisibility}
+                      className={styles.togglePassword}
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label>Gender</label>
+                  <div className={styles.customSelect}>
+                    <select
+                      value={gender}
+                      onChange={(e) => setGender(e.target.value)} // Update gender state
+                      required={true}
+                    >
+                      <option value="" disabled>
+                        Select Gender
+                      </option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Country</label>
+                  <input
+                    type="text"
+                    placeholder="Country"
+                    value={country}
+                    onChange={handleCountryInput}
+                    required={true}
+                  />
+                  {filteredCountries.length > 0 && (
+                    <ul className={styles.suggestionsList}>
+                      {filteredCountries.map((name, index) => (
+                        <li
+                          key={index}
+                          className={styles.suggestionItem}
+                          // Update country state on click also reset suggestions
+                          onClick={() => {
+                            setCountry(name.label);
+                            setFilteredCountries([]);
+                          }}
+                        >
+                          {name.label}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+              <div className={styles.emailSection}>
+                <h3>My Email Address</h3>
+                <div className={styles.emailDetails}>
+                  <div className={styles.emailIcon}>
+                    <img
+                      src={Email}
+                      alt="Profile"
+                      className={styles.profileImage}
+                    />
+                  </div>
+                  <div>
+                    <p>{user.email}</p>
+                    <p>{createdAt}</p>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+
+          {/* Crop Modal */}
+          {isCropping && (
+            <div className={styles.cropModal}>
+              <div className={styles.cropContainer}>
+                <div className={styles.cropArea}>
+                  <Cropper
+                    image={selectedImage}
+                    crop={crop}
+                    zoom={zoom}
+                    aspect={1} // Square aspect ratio
+                    onCropChange={setCrop}
+                    onCropComplete={onCropComplete}
+                    onZoomChange={setZoom}
+                  />
+                </div>
+                <div className={styles.cropActions}>
+                  <button
+                    onClick={cancelCropping}
+                    className={styles.cancelButton}
+                  >
+                    Cancel
+                  </button>
+                  <button onClick={cropImage} className={styles.saveButton}>
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

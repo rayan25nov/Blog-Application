@@ -1,3 +1,12 @@
+.dark {
+  --text-color: #ffffff;
+}
+
+/* Light theme variables */
+.light {
+  --text-color: #333333;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -10,14 +19,14 @@
 
 .h2 {
   font-size: 2rem;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 0.5rem;
   width: 100%;
 }
 
 .p {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-color);
   line-height: 1.6;
 }
 .sd {
@@ -51,7 +60,7 @@
 
 h3 {
   font-size: 1.5rem;
-  color: #444;
+  color: var(--text-color);
   margin-top: 20px;
 }
 
@@ -62,7 +71,7 @@ ul {
 
 li {
   font-size: 1rem;
-  color: #555;
+  color: var(--text-color);
   margin-bottom: 10px;
 }
 

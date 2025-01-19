@@ -3,12 +3,17 @@ import styles from "./SpecificProject.module.css";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import projects from "./ProjectData.json";
 import rightArrow from "../../assets/images/right-arrow.svg";
+import { selectDarkMode } from "../../Features/ToggleModeSlice";
+import { useSelector } from "react-redux";
 
 const SpecificProject = () => {
+  const darkMode = useSelector(selectDarkMode);
   const { id } = useParams();
   const project = projects.find((project) => project.id === id);
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}
+    >
       <h2 className={styles.h2}>{project.title}</h2>
       <p className={styles.sd}>{project.shortDescription}</p>
       <img src={project.brand} alt="Project" className={styles.image} />

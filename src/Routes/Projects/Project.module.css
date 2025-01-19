@@ -1,3 +1,12 @@
+/* Dark theme variables */
+.dark {
+  --text-color: #ffffff;
+}
+
+/* Light theme variables */
+.light {
+  --text-color: #333333;
+}
 .container {
   font-family: "Roboto", sans-serif;
   margin: 0 auto;

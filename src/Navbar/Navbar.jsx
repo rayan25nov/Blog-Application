@@ -90,6 +90,16 @@ const Navbar = () => {
               NewsLetter
             </Link>
 
+            <Link
+              to={"/profile-edit"}
+              className={
+                location.pathname === "/profile-edit" ? Styles.active : ""
+              }
+              onClick={toggleMenu}
+            >
+              Edit Profile
+            </Link>
+
             <button className={Styles.logoutBtn} onClick={handleLogout}>
               Logout
             </button>

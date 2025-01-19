@@ -36,10 +36,11 @@ hr {
   margin: 1rem 0; /* 16px 0 */
 }
 .hero {
-  width: 100px;
-  height: 100px;
+  width: 9.375rem;
+  height: 9.375rem;
   border-radius: 50%;
   object-fit: cover;
+  border: 0.25rem solid #26b893;
 }
 
 /* Define the styles for the link container */
@@ -86,11 +87,10 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 100vh;
   font-size: 1.5rem;
-  color: var(--text-color); 
+  color: var(--text-color);
 }
-
 
 .pagination {
   display: flex;
